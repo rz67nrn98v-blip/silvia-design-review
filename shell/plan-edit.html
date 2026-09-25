@@ -13,13 +13,13 @@
 <body>
   <div class="meta">
     <div class="tag">Silvia · Core · Plan edit</div>
-    <h1>Adjust one rule.</h1>
-    <p>Raise a reserve or change payoff pace. Show plan impact. Confirm before it sticks.</p>
+    <h1>Change one rule.</h1>
+    <p>Buffer floor, a bill’s autopay, or flexible allocation. Show spendable and bucket impact. Confirm before it sticks.</p>
   </div>
 
   <div class="row">
     <div class="col">
-      <div class="col-label">Edit · Utilities reserve</div>
+      <div class="col-label">Edit · Buffer floor</div>
       <div class="device">
         <div class="notch"></div>
         <div class="status-bar"><span>9:41</span><span>5G</span></div>
@@ -32,31 +32,31 @@
             <div class="detail-type" style="margin:0">Plan rule</div>
             <span class="tier">Core</span>
           </div>
-          <h1 class="detail-title">Utilities reserve</h1>
-          <p class="detail-sub">Electric jumped. Raise the reserve so next cycle doesn’t need you.</p>
+          <h1 class="detail-title">Buffer floor</h1>
+          <p class="detail-sub">Default is 2 weeks of essential bills. Raise it if you want a thicker safety net.</p>
 
           <div class="stat-grid">
-            <div class="stat"><div class="k">Current</div><div class="v">$214</div><div class="s">/ paycheck</div></div>
-            <div class="stat"><div class="k">Proposed</div><div class="v">$280</div><div class="s">/ paycheck</div></div>
-            <div class="stat"><div class="k">Spendable</div><div class="v">$496 → $430</div><div class="s">This week</div></div>
-            <div class="stat"><div class="k">Bills reserved</div><div class="v">$839 → $905</div><div class="s">Total</div></div>
+            <div class="stat"><div class="k">Current</div><div class="v">$920</div><div class="s">2 weeks essentials</div></div>
+            <div class="stat"><div class="k">Proposed</div><div class="v">$1,200</div><div class="s">~2.5 weeks</div></div>
+            <div class="stat"><div class="k">Spendable</div><div class="v">$496 → $216</div><div class="s">This week</div></div>
+            <div class="stat"><div class="k">Flexible</div><div class="v">$496 → $216</div><div class="s">Bucket</div></div>
           </div>
 
           <div class="card">
             <div class="k">Plan impact</div>
-            <h2>Spendable drops $66.</h2>
-            <p>Retirement and debts unchanged. I’ll use $280 as the new utilities floor starting next paycheck.</p>
+            <h2>Spendable drops $280.</h2>
+            <p>Bills bucket unchanged. She won’t drop buffer below $1,200 without a Decide.</p>
             <span class="badge quiet">Preview · not saved</span>
           </div>
 
           <div class="list-card">
             <div class="list-head">Also considered</div>
-            <div class="list-row"><span>Keep $214 · decide each spike</span><span class="muted">Default</span></div>
-            <div class="list-row"><span>Raise to $250</span><span class="muted">Softer</span></div>
-            <div class="list-row tappable"><span>Raise to $280 · recommended</span><span class="pill forest">Best</span></div>
+            <div class="list-row"><span>Keep $920 · 2 weeks</span><span class="muted">Default</span></div>
+            <div class="list-row tappable"><span>Raise to $1,200 · recommended</span><span class="pill forest">Best</span></div>
+            <div class="list-row"><span>Raise to $1,500</span><span class="muted">Thicker</span></div>
           </div>
 
-          <div class="action-btn primary" style="width:100%">Confirm $280 reserve</div>
+          <div class="action-btn primary" style="width:100%">Confirm $1,200 floor</div>
         </div>
         <nav class="tabs" data-active="money"></nav>
         <div class="home-indicator"></div>
@@ -64,7 +64,7 @@
     </div>
 
     <div class="col">
-      <div class="col-label">Edit · Card payoff pace</div>
+      <div class="col-label">Edit · Card autopay rule</div>
       <div class="device">
         <div class="notch"></div>
         <div class="status-bar"><span>9:41</span><span>5G</span></div>
@@ -77,25 +77,32 @@
             <div class="detail-type" style="margin:0">Plan rule</div>
             <span class="tier">Core</span>
           </div>
-          <h1 class="detail-title">Sapphire payoff pace</h1>
-          <p class="detail-sub">Today: minimum + buffer. You can push harder without touching retirement.</p>
+          <h1 class="detail-title">Sapphire autopay</h1>
+          <p class="detail-sub">Cards default to autopay minimum. Pay statement balance is an explicit plan rule.</p>
 
           <div class="stat-grid">
-            <div class="stat"><div class="k">Current</div><div class="v">$240</div><div class="s">Min+</div></div>
-            <div class="stat"><div class="k">Proposed</div><div class="v">$400</div><div class="s">Faster</div></div>
-            <div class="stat"><div class="k">Spendable</div><div class="v">−$160</div><div class="s">Per paycheck</div></div>
-            <div class="stat"><div class="k">Clear in</div><div class="v">~4 mo</div><div class="s">Was ~8</div></div>
+            <div class="stat"><div class="k">Current</div><div class="v">Min</div><div class="s">$240 · confirm</div></div>
+            <div class="stat"><div class="k">Proposed</div><div class="v">Statement</div><div class="s">~$680</div></div>
+            <div class="stat"><div class="k">Spendable</div><div class="v">−$440</div><div class="s">Per cycle</div></div>
+            <div class="stat"><div class="k">Bills bucket</div><div class="v">+$440</div><div class="s">Reserved</div></div>
           </div>
 
           <div class="card">
             <div class="k">Plan impact</div>
-            <h2>Retirement stays $410.</h2>
-            <p>Extra $160 comes from spendable only. I’ll confirm before the next draft.</p>
+            <h2>Flexible shrinks $440.</h2>
+            <p>Paid from designated checking. Buffer floor stays $920. She’ll confirm before the next draft.</p>
             <span class="badge quiet">Preview · not saved</span>
           </div>
 
-          <div class="action-btn primary" style="width:100%">Confirm $400 pace</div>
-          <div class="action-btn ghost" style="width:100%;margin-top:8px">Keep current</div>
+          <div class="list-card">
+            <div class="list-head">Rule options</div>
+            <div class="list-row"><span>Autopay minimum</span><span class="muted">Default</span></div>
+            <div class="list-row tappable"><span>Pay statement balance</span><span class="pill forest">Proposed</span></div>
+            <div class="list-row"><span>Off · ask each cycle</span><span class="muted">Manual</span></div>
+          </div>
+
+          <div class="action-btn primary" style="width:100%">Confirm statement pay</div>
+          <div class="action-btn ghost" style="width:100%;margin-top:8px">Keep minimum</div>
         </div>
         <nav class="tabs" data-active="money"></nav>
         <div class="home-indicator"></div>

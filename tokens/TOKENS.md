@@ -211,9 +211,17 @@ Investments home: stocks, trading — **not** Money debts.
 - Shell: `money-audit.html`, `money-audit-finding.html`. Decide path: `decide-audit.html`.
 
 ### Plan (Money / Home framing)
-- Overview: spendable + rules she follows (bills reserved, debts scheduled, retirement contribution).
+**Source of truth:** `CORE-PLAN.md`.
+
+**Core job (one-liner):** Bread-and-butter auto bill pay + planning/budgeting — on track, bills on time, manage money. Foundation for wealth. **Not** investing Autopilot.
+
+**Model:** income + expenses → plan (spendable + Core buckets Bills · Buffer · Flexible + bill autopay schedule) → she runs it; **Decide** only on guardrail breaks (priority bill miss risk, buffer below floor, pay fail, audit gap).
+
+- Empty until income **or** expenses land — never invent numbers.
+- Live overview: inputs summary (income + expenses), spendable hero, Core buckets, autopay/bill schedule, buffer-floor guardrail, quiet taken-care-of crosslink. Retirement is not a Core bucket row.
+- Open defaults: buffer = 2 weeks essentials; cards autopay **minimum** (statement pay = explicit rule); pay from designated checking.
+- Edit one rule (buffer floor / bill autopay / flexible allocation); show spendable + bucket impact; confirm.
 - **Core household only** — not investing Autopilot rebalance.
-- Edit one rule/target; show plan impact; confirm.
 - Shell: `plan.html`, `plan-edit.html`. Decide path: `decide-plan.html` (conflict / break-plan).
 
 ### Decide exceptions (Core)
