@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Money · Bills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Core · Bills</div>
+    <h1>Bills under Money.</h1>
+    <p>Upcoming, paid, overdue. Autopay and reserves from spendable inside the plan. Pay is for people — bills live here.</p>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Bills empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="eyebrow">Money · Bills</div>
+          <h1 class="hero">No bills yet.</h1>
+          <p class="lede empty">When accounts connect, Silvia tracks what’s due, what’s reserved, and what still needs you.</p>
+
+          <div class="card empty">
+            <div class="k">From spendable</div>
+            <h2 class="num empty-num">—</h2>
+            <p>Bills pull from the plan — never from people payments on Pay.</p>
+          </div>
+
+          <div class="list-card empty">
+            <div class="list-head">Upcoming</div>
+            <div class="list-row"><span class="muted">Nothing tracked</span></div>
+          </div>
+          <div class="list-card empty">
+            <div class="list-head">Paid recently</div>
+            <div class="list-row"><span class="muted">None yet</span></div>
+          </div>
+
+          <div class="card empty crosslink">
+            <div class="k">Note</div>
+            <h2>Pay is for people.</h2>
+            <p>Venmo, Zelle, Cash App stay on the Pay tab. Bills stay under Money.</p>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">B · Bills live</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="app-bar" style="margin-bottom:12px">
+            <div class="brand" style="gap:0">
+              <span class="eyebrow" style="margin:0">Money · Bills</span>
+            </div>
+            <span class="tier">Core</span>
+          </div>
+          <h1 class="hero">What’s due.</h1>
+          <p class="lede">Reserved from spendable inside the plan. One needs you.</p>
+
+          <div class="card spend">
+            <div class="k">Reserved for bills</div>
+            <h2 class="num">$839</h2>
+            <p>Already set aside this paycheck. Spendable stays clear.</p>
+          </div>
+
+          <div class="card night">
+            <div class="k">Needs you</div>
+            <h2>Electric · amount jumped.</h2>
+            <p>$214 → $312. Autopay held. Approve the new amount or pause.</p>
+            <span class="badge">Open · Decide</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Upcoming</div>
+            <p class="section-note">Tap for detail</p>
+            <div class="list-row tappable"><span>Sapphire · Sep 24</span><span><span class="pill">$240 · Reserved</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Electric · Sep 26</span><span><span class="pill">Needs you</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Internet · Sep 28</span><span><span class="pill forest">Autopay on</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Auto loan · Oct 1</span><span><span class="pill">$385 · Reserved</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Mortgage · Oct 1</span><span><span class="pill forest">Autopay on</span><span class="arrow">›</span></span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Paid recently</div>
+            <div class="list-row"><span>Water · Sep 12</span><span class="pill forest">$48 · Paid</span></div>
+            <div class="list-row"><span>Phone · Sep 8</span><span class="pill forest">$92 · Autopay</span></div>
+            <div class="list-row"><span>Amex Gold · Sep 5</span><span class="pill forest">$180 · Paid</span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Overdue</div>
+            <div class="list-row"><span class="muted">None</span></div>
+          </div>
+
+          <div class="card crosslink">
+            <div class="k">Note</div>
+            <h2>Pay is for people.</h2>
+            <p>Bills stay here under Money. People payments live on Pay.</p>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Money · Bill detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Core · Bill detail</div>
+    <h1>One bill, fully framed.</h1>
+    <p>Amount, due, autopay, plan impact. CTA only when a human is needed.</p>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Autopay quiet</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Bills
+          </div>
+          <div class="detail-type">Bill · Utilities</div>
+          <h1 class="detail-title">Internet</h1>
+          <p class="detail-sub">Autopay on. Reserved from this paycheck. No action needed.</p>
+
+          <div style="display:flex;justify-content:flex-end;margin:-8px 0 12px">
+            <span class="tier">Core</span>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Amount</div><div class="v">$79</div><div class="s">Monthly</div></div>
+            <div class="stat"><div class="k">Due</div><div class="v">Sep 28</div><div class="s">In 4 days</div></div>
+            <div class="stat"><div class="k">Autopay</div><div class="v">On</div><div class="s">From checking</div></div>
+            <div class="stat"><div class="k">Plan</div><div class="v">Reserved</div><div class="s">Inside spendable</div></div>
+          </div>
+
+          <div class="card">
+            <div class="k">What Silvia will do</div>
+            <h2>Pay $79 on Sep 28.</h2>
+            <p>Already reserved. Spendable this week stays $496 after this and other bills.</p>
+            <span class="badge quiet">On schedule</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Recent</div>
+            <div class="hist-row"><span class="name">Paid</span><span class="when">Aug 28</span><span class="amt pay">$79.00</span></div>
+            <div class="hist-row"><span class="name">Paid</span><span class="when">Jul 28</span><span class="amt pay">$79.00</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">B · Needs you · Electric</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Bills
+          </div>
+          <div class="detail-type">Bill · Utilities</div>
+          <h1 class="detail-title">Electric</h1>
+          <p class="detail-sub">Amount jumped. Autopay held until you decide.</p>
+
+          <div style="display:flex;justify-content:flex-end;margin:-8px 0 12px">
+            <span class="tier">Core</span>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Was</div><div class="v">$214</div><div class="s">Typical</div></div>
+            <div class="stat"><div class="k">Now due</div><div class="v debt">$312</div><div class="s">Sep 26</div></div>
+            <div class="stat"><div class="k">Autopay</div><div class="v">Held</div><div class="s">Waiting on you</div></div>
+            <div class="stat"><div class="k">Plan hit</div><div class="v">+$98</div><div class="s">vs reserve</div></div>
+          </div>
+
+          <div class="card night">
+            <div class="k">Needs you</div>
+            <h2>Approve $312 or pause.</h2>
+            <p>I’ll pull the extra $98 from spendable if you approve. Or pause autopay and I’ll open Decide.</p>
+            <span class="badge">Open</span>
+          </div>
+
+          <div class="card">
+            <div class="k">What Silvia did</div>
+            <h2>Held the draft.</h2>
+            <p>Saw the jump overnight. Reserved the original $214. Didn’t touch the rest without you.</p>
+            <span class="badge quiet">Held · Sep 24</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Your options</div>
+            <div class="list-row tappable"><span>Approve $312 · from spendable</span><span class="arrow">›</span></div>
+            <div class="list-row tappable"><span>Pay typical $214 · dispute rest</span><span class="arrow">›</span></div>
+            <div class="list-row tappable"><span>Pause · open in Decide</span><span class="arrow">›</span></div>
+          </div>
+
+          <div class="action-btn primary" style="width:100%">Approve $312</div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>
