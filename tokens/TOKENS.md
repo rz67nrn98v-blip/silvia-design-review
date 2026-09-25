@@ -226,6 +226,8 @@ Investments home: stocks, trading — **not** Money debts.
 
 ### Next tier (not v1 deepen)
 - Portfolio discovery, Trading, Misfits, investment Autopilot — shipped shells stay for review but are out of Core v1 scope.
+- **Future-tier look pack (not v1 product):** Managed Portfolio status + exceptions, Misfits access mode (under Portfolio/Decide — never its own tab), Investing Autopilot overnight proof, Managed Decide exception. Index section: **Next tier (not v1)**. Every screen labeled Next tier · not v1 with Managed / Misfits / Autopilot chips as fit. Core remains the only v1 focus.
+- Shells: `tier-managed-portfolio.html`, `tier-misfits.html`, `tier-autopilot-investing.html`, `portfolio-managed-exception.html` (+ existing portfolio discovery).
 
 ### Pay depth
 - **Approved and locked.** Do not edit pay*.html or Pay shots in Core packs.
