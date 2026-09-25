@@ -219,31 +219,36 @@ Investments home: stocks, trading — **not** Money debts.
 **Model:** income + expenses → plan (spendable + Core buckets Bills · Buffer · Flexible + bill autopay schedule) → she runs it; **Decide** only on guardrail breaks (priority bill miss risk, buffer below floor, pay fail, audit gap).
 
 - Empty until income **or** expenses land — never invent numbers.
-- Live overview: inputs summary (income + expenses), spendable hero, Core buckets, autopay/bill schedule, buffer-floor guardrail, quiet taken-care-of crosslink. Retirement is not a Core bucket row.
-- Open defaults: buffer = 2 weeks essentials; cards autopay **minimum** (statement pay = explicit rule); pay from designated checking.
-- Edit one rule (buffer floor / bill autopay / flexible allocation); show spendable + bucket impact; confirm.
+- Live overview: inputs summary (income + expenses), spendable hero, Core buckets (Bills · Buffer goal · Flexible · Debt extra), autopay/bill schedule, quiet taken-care-of crosslink. Retirement is not a Core bucket row.
+- **Locked — cards:** never quiet minimum. Every cycle she asks to pay more; recommends an affordable amount over min toward debt. Options: her amount (primary) · own · statement · minimum this cycle only (explicit, discouraged). Shells: `plan-edit.html` (Sapphire pace), `money-card.html`, `money-bill-detail.html`, `decide-card-paymore.html`.
+- **Locked — buffer:** ~2 weeks essentials = **opt-in goal**, not an assumed cash floor. Decline → $0 / no floor / no buffer guardrail. Accept → goal active; guardrail only once active and funded. Smaller starter OK. Shells: `plan.html`, `plan-edit.html`, `onboard-plan-propose.html`, `decide-buffer.html` (breach only if goal active).
+- **Locked — catch-up:** if behind on bills, propose a path to get **current** (essentials first, sequence, temporary Flexible cuts, partials/arrangements) from real income + spendable + due amounts — never invent money; not overdue list alone. Shells: `money-bills.html`, `money-audit-finding.html`, `decide-catchup.html`.
+- Edit one rule (buffer goal / card pay-more pace / bill autopay / flexible); show spendable + bucket impact; confirm.
 - **Core household only** — not investing Autopilot rebalance.
 - Shell: `plan.html`, `plan-edit.html`. Decide path: `decide-plan.html` (conflict / break-plan).
 
 ### First-run onboarding (Core)
-Sequence from `CORE-PLAN.md`: connect (or manual income + bill list) → audit snapshot → propose plan (spendable + Bills/Buffer/Flexible + autopay + buffer floor) → **one** human confirm → she runs.
+Sequence from `CORE-PLAN.md`: connect (or manual income + bill list) → audit snapshot → propose plan → **two Core asks** (card pay-more + buffer endeavor) → **one** human confirm → she runs. If audit finds overdue, catch-up path enters Decide.
 
 - Empty until income **or** expenses land — never invent numbers.
 - Both paths visible on start: link accounts **or** enter manually.
 - Progressive / editorial — not a 12-step wizard.
-- Shells: `onboard-connect.html`, `onboard-income-expenses.html`, `onboard-audit.html`, `onboard-plan-propose.html`.
-- **Plan-confirm Decide:** `decide-plan-confirm.html` — night / Needs-you. Options: Confirm plan & run · Adjust a rule · Not now. The one human gate before autopilot; not per-bill confirms. Appears as a Core exception type alongside bill / audit / plan break.
+- Shells: `onboard-connect.html`, `onboard-income-expenses.html`, `onboard-audit.html`, `onboard-plan-propose.html` (accept + not-now buffer paths; card ask never Min·confirm happy path).
+- **Plan-confirm Decide:** `decide-plan-confirm.html` — night / Needs-you. Options: Confirm plan & run · Adjust a rule · Not now. The one human gate before autopilot; not per-bill confirms.
 
 ### Ask · Core plan chips
 - Affordance chips grounded in the live plan (structure only — no advice theater):
-  - **Can I afford X?** → answer against spendable + buffer floor; excess opens Decide rather than dipping reserves.
-  - **Why didn’t X pay?** → held / fail / not-in-plan explanation tied to autopay rules.
-- Feels like OS assistant for household money life. Shell: `ask-core.html` (empty + live threads). Existing `ask.html` remains general Ask chrome.
+  - **Can I afford X?** → against spendable + active buffer goal (if any); excess opens Decide.
+  - **Why didn’t X pay?** → held / fail / not-in-plan tied to autopay rules.
+  - **What should I pay on the card?** → same pay-more logic (her amount primary).
+  - **How do we get current?** → catch-up sequence when behind.
+- Feels like OS assistant for household money life. Shell: `ask-core.html`. Existing `ask.html` remains general Ask chrome.
 
 ### Decide exceptions (Core)
-- Primary Needs you: bill / audit / plan exceptions — not Trading.
-- Types: bill failed or amount jump; audit gap; plan conflict / break-plan request.
-- Night card pattern. Car replacement may remain as a Waiting household example.
+- Primary Needs you: bill / audit / plan / **card pay-more** / **catch-up** / buffer (goal active) — not Trading.
+- Types: bill failed or amount jump; audit gap; plan conflict; card pay-more each cycle; catch-up when behind; buffer breach only if goal opted in + funded.
+- Night card pattern. Shells: `decide-card-paymore.html`, `decide-catchup.html`, `decide-buffer.html`, …
+- Car replacement may remain as a Waiting household example.
 
 ### Taken care of
 - Quiet proof card (bills paid, paycheck routed) — not a noisy feed. Optional on Home / Plan.

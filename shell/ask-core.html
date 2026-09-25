@@ -109,7 +109,7 @@
   <div class="meta">
     <div class="tag">Silvia · Core · Ask</div>
     <h1>OS assistant for household money.</h1>
-    <p>Plan-grounded chips — “Can I afford X?” against spendable + buffer; “Why didn’t X pay?” tied to autopay. After an afford answer that needs a human, one follow-up action chip (Open Decide). Structure only. No advice theater.</p>
+    <p>Plan-grounded chips — afford, why didn’t pay, card pay-more, get current. Structure only. No advice theater.</p>
   </div>
 
   <div class="row">
@@ -134,7 +134,7 @@
           <div class="eyebrow">Ask</div>
           <div class="ask-empty">
             <h1 class="hero">I’m Silvia.</h1>
-            <p class="lede empty">I run bills and the household plan. Needs income and expenses first — I never invent numbers. Ask against spendable, buffer, and autopay once they’re in.</p>
+            <p class="lede empty">I run bills and the household plan. Needs income and expenses first — I never invent numbers. Ask against spendable, buffer goal, cards, and catch-up once they’re in.</p>
             <div class="chips-ask">
               <span class="chip-ask">What can you do?</span>
               <span class="chip-ask">How does the plan work?</span>
@@ -151,7 +151,7 @@
     </div>
 
     <div class="col">
-      <div class="col-label">B · Afford · live</div>
+      <div class="col-label">B · Card pay-more</div>
       <div class="device">
         <div class="notch"></div>
         <div class="status-bar"><span>6:18</span><span>5G</span></div>
@@ -172,29 +172,22 @@
           <div class="chat">
             <div class="chat-scroll">
               <div class="bubble you">
-                Can I afford $180 for dinner and tickets?
+                What should I pay on the card?
               </div>
               <div class="bubble her">
                 <div class="who">Silvia</div>
-                Yes — against this week’s plan. Spendable is $496. Buffer floor stays $920. After $180, Flexible is $316. Bills untouched.
-              </div>
-              <div class="bubble you">
-                What if it were $520?
-              </div>
-              <div class="bubble her">
-                <div class="who">Silvia</div>
-                That exceeds spendable by $24. I’d hold it and open Decide — not dip buffer or bills without you.
+                Sapphire due Sep 24. Minimum is $240 — I won’t leave you on that quietly. From spendable after essentials I recommend <strong>$400</strong> (+$160 toward debt). Or own amount · statement $680 · min this cycle only (discouraged).
               </div>
               <div class="chips-ask" style="align-self:flex-start;margin-top:0">
-                <span class="chip-ask" style="background:var(--forest-muted);border-color:var(--forest)">Open Decide</span>
-                <span class="chip-ask">What’s spendable?</span>
-                <span class="chip-ask">Show Electric card</span>
+                <span class="chip-ask" style="background:var(--forest-muted);border-color:var(--forest)">Pay her $400</span>
+                <span class="chip-ask">Set my own</span>
+                <span class="chip-ask">Open Decide</span>
               </div>
             </div>
             <div class="chips-ask">
+              <span class="chip-ask">What should I pay on the card?</span>
               <span class="chip-ask">Can I afford X?</span>
-              <span class="chip-ask">Why didn’t Electric pay?</span>
-              <span class="chip-ask">What’s spendable?</span>
+              <span class="chip-ask">How do we get current?</span>
             </div>
             <div class="composer">
               <span class="ph">Message Silvia…</span>
@@ -208,7 +201,7 @@
     </div>
 
     <div class="col">
-      <div class="col-label">C · Why didn’t X pay</div>
+      <div class="col-label">C · How do we get current?</div>
       <div class="device">
         <div class="notch"></div>
         <div class="status-bar"><span>6:22</span><span>5G</span></div>
@@ -229,23 +222,21 @@
           <div class="chat">
             <div class="chat-scroll">
               <div class="bubble you">
-                Why didn’t Electric pay?
+                How do we get current?
               </div>
               <div class="bubble her">
                 <div class="who">Silvia</div>
-                Held — amount jumped from $214 to $312. Autopay rule: I don’t pay a variance that large without Decide. Due Sep 26. Open card is waiting on you.
+                You’re $687 behind across four bills. Path from real money only: $274 today (Electric partial + Phone), $413 on Oct 3 pay (Water, Electric rest, Internet late). Flexible temporarily $120/wk. Essentials first — I never invent cash.
               </div>
-              <div class="bubble you">
-                And Sapphire?
-              </div>
-              <div class="bubble her">
-                <div class="who">Silvia</div>
-                Still in plan. Rule is minimum · confirm — not failed. Draft is reserved; I’ll ask before it leaves checking.
+              <div class="chips-ask" style="align-self:flex-start;margin-top:0">
+                <span class="chip-ask" style="background:var(--forest-muted);border-color:var(--forest)">Open catch-up Decide</span>
+                <span class="chip-ask">Show overdue</span>
               </div>
             </div>
             <div class="chips-ask">
-              <span class="chip-ask">Show the Electric Decide</span>
-              <span class="chip-ask">What’s on autopay?</span>
+              <span class="chip-ask">How do we get current?</span>
+              <span class="chip-ask">Why didn’t Electric pay?</span>
+              <span class="chip-ask">What’s spendable?</span>
             </div>
             <div class="composer">
               <span class="ph">Message Silvia…</span>

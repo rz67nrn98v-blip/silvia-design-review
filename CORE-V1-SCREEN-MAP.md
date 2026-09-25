@@ -23,7 +23,7 @@ Build and ship in this sequence. Each row is a static Design shell Eng can open 
 | 0.1 | [`shell/onboard-connect.html`](shell/onboard-connect.html) | Link accounts **or** enter income/expenses manually |
 | 0.2 | [`shell/onboard-income-expenses.html`](shell/onboard-income-expenses.html) | Capture / review income + expenses (empty until both exist) |
 | 0.3 | [`shell/onboard-audit.html`](shell/onboard-audit.html) | First-run covered vs gaps before plan propose |
-| 0.4 | [`shell/onboard-plan-propose.html`](shell/onboard-plan-propose.html) | Proposed plan: spendable, buckets, autopay, buffer floor — waiting one confirm |
+| 0.4 | [`shell/onboard-plan-propose.html`](shell/onboard-plan-propose.html) | Proposed plan + **card pay-more ask** + **buffer endeavor ask** (accept / not-now) |
 | 0.5 | [`shell/decide-plan-confirm.html`](shell/decide-plan-confirm.html) | **One human gate:** Confirm & run · Adjust a rule · Not now. Then she runs. |
 
 ### 1 · Money — bills, audit, plan
@@ -31,12 +31,12 @@ Build and ship in this sequence. Each row is a static Design shell Eng can open 
 | # | Shell | Eng job |
 |---|---|---|
 | 1.1 | [`shell/money.html`](shell/money.html) | Money hub (spendable, accounts, debts, bills entry) — Eng owns; Design light-touch only |
-| 1.2 | [`shell/money-bills.html`](shell/money-bills.html) | Bills hub: upcoming / paid / overdue · autopay / reserved / needs you |
-| 1.3 | [`shell/money-bill-detail.html`](shell/money-bill-detail.html) | One bill: amount, due, **autopay On / Held / Off·Confirm**, plan impact, CTA only if human needed |
+| 1.2 | [`shell/money-bills.html`](shell/money-bills.html) | Bills hub: upcoming / paid / **overdue with catch-up path** (not list-only) |
+| 1.3 | [`shell/money-bill-detail.html`](shell/money-bill-detail.html) | One bill: amount, due, autopay; **cards = pay-more ask** (never quiet min) |
 | 1.4 | [`shell/money-audit.html`](shell/money-audit.html) | Continuous audit summary — covered vs gaps |
-| 1.5 | [`shell/money-audit-finding.html`](shell/money-audit-finding.html) | One finding → proposed action → Decide if needed |
-| 1.6 | [`shell/plan.html`](shell/plan.html) | Plan live: income + expenses → spendable + Bills/Buffer/Flexible + autopay + buffer floor |
-| 1.7 | [`shell/plan-edit.html`](shell/plan-edit.html) | Change one rule (e.g. buffer floor, card autopay pace); show impact; confirm |
+| 1.5 | [`shell/money-audit-finding.html`](shell/money-audit-finding.html) | One finding → proposed action; **behind → catch-up sequence** → Decide |
+| 1.6 | [`shell/plan.html`](shell/plan.html) | Plan live: spendable + Bills / Buffer **goal** / Flexible / Debt extra + card pace (her amount) |
+| 1.7 | [`shell/plan-edit.html`](shell/plan-edit.html) | Buffer **goal** opt-in/change/pause; Sapphire **pay-more** four options |
 
 **Instrument drill-downs (supporting Money, not a separate product):**  
 [`money-card.html`](shell/money-card.html) · [`money-loan.html`](shell/money-loan.html) · [`money-mortgage.html`](shell/money-mortgage.html)
@@ -65,7 +65,9 @@ Same stream as Home **Needs you**. One at a time. Night card pattern.
 | 3.2 | [`shell/decide-bill.html`](shell/decide-bill.html) | Bill fail / amount jump / held autopay |
 | 3.3 | [`shell/decide-audit.html`](shell/decide-audit.html) | Audit gap needs human |
 | 3.4 | [`shell/decide-plan.html`](shell/decide-plan.html) | Plan conflict / break-plan |
-| 3.5 | [`shell/decide-buffer.html`](shell/decide-buffer.html) | Buffer breach — skip · partial · move · delay (**no silent overdraft**) |
+| 3.5 | [`shell/decide-buffer.html`](shell/decide-buffer.html) | Buffer breach — **only if goal active + funded**; skip · partial · move · delay |
+| 3.6 | [`shell/decide-card-paymore.html`](shell/decide-card-paymore.html) | Card pay-more each cycle — her $ · own · statement · min this cycle only |
+| 3.7 | [`shell/decide-catchup.html`](shell/decide-catchup.html) | Behind — approve catch-up sequence · adjust priorities · partials |
 
 Legacy household example (optional, not Core money-ops): [`decide-detail.html`](shell/decide-detail.html) (car).
 
@@ -80,7 +82,7 @@ Legacy household example (optional, not Core money-ops): [`decide-detail.html`](
 
 | # | Shell | Eng job |
 |---|---|---|
-| 5.1 | [`shell/ask-core.html`](shell/ask-core.html) | Chips: **Can I afford X?** / **Why didn’t X pay?** against spendable + autopay rules; follow-up → Decide / spendable / bill card |
+| 5.1 | [`shell/ask-core.html`](shell/ask-core.html) | Chips: afford / why didn’t pay / **What should I pay on the card?** / **How do we get current?** |
 | 5.2 | [`shell/ask.html`](shell/ask.html) | Broader Ask empty + live (supporting) |
 
 ---
@@ -91,8 +93,9 @@ Legacy household example (optional, not Core money-ops): [`decide-detail.html`](
 onboard-connect
   → onboard-income-expenses
   → onboard-audit
-  → onboard-plan-propose
+  → onboard-plan-propose   ← card pay-more + buffer goal asks
   → decide-plan-confirm   ← one confirm
+  → decide-catchup when behind; decide-card-paymore each card cycle
   → home-handled + money/plan run quietly
   → decide-* only on exceptions
   → ask-core against the live plan
