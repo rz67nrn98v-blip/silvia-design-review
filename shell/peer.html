@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Pay tab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Pay tab v0.1</div>
+    <h1>Send & request, first-class.</h1>
+    <p>Venmo, Zelle, Cash App — send, request, history, linked handles. Replaces opening those apps for the same jobs. Empty until linked.</p>
+  </div>
+
+  <div class="row">
+    <!-- EMPTY -->
+    <div class="col">
+      <div class="col-label">A · Pay empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier muted">Connect</span>
+          </div>
+          <div class="eyebrow">Pay</div>
+          <h1 class="hero">No rails linked.</h1>
+          <p class="lede empty">Connect Venmo, Zelle, or Cash App. Then send and request without leaving Silvia.</p>
+          <div class="action-row">
+            <div class="action-btn ghost">Send</div>
+            <div class="action-btn ghost">Request</div>
+          </div>
+          <div class="list-card empty">
+            <div class="list-head">Rails</div>
+            <div class="list-row"><span>Venmo</span><span class="muted">Not linked</span></div>
+            <div class="list-row"><span>Zelle</span><span class="muted">Not linked</span></div>
+            <div class="list-row"><span>Cash App</span><span class="muted">Not linked</span></div>
+          </div>
+          <div class="list-card empty">
+            <div class="list-head">Activity</div>
+            <div class="list-row"><span class="muted">Nothing yet</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="pay"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- LIVE -->
+    <div class="col">
+      <div class="col-label">B · Pay live</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier">Autopilot</span>
+          </div>
+          <div class="eyebrow">Pay</div>
+          <h1 class="hero">Pay people here.</h1>
+          <p class="lede">Three rails linked. Send and request from spendable — no other apps.</p>
+
+          <div class="action-row">
+            <div class="action-btn primary">Send</div>
+            <div class="action-btn secondary">Request</div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Linked rails</div>
+            <div class="list-row tappable"><span>Venmo · @anthony.m</span><span><span class="pill forest">Linked</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Zelle · Chase</span><span><span class="pill forest">Linked</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Cash App · $anthony</span><span><span class="pill forest">Linked</span><span class="arrow">›</span></span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Open requests</div>
+            <div class="list-row"><span>Jordan · concert</span><span class="pill">$60 · Zelle</span></div>
+            <div class="list-row"><span>Sam · groceries</span><span class="pill">$32 · Venmo</span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Recent</div>
+            <div class="hist-row"><span class="name">Maya · dinner</span><span class="when">Venmo · Today</span><span class="amt charge">−$48.00</span></div>
+            <div class="hist-row"><span class="name">Chris · rent share</span><span class="when">Zelle · Sep 12</span><span class="amt charge">−$650.00</span></div>
+            <div class="hist-row"><span class="name">Alex · paid you</span><span class="when">Cash App · Sep 10</span><span class="amt pay">+$25.00</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="pay"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

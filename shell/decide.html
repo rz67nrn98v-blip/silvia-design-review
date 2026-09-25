@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Decide tab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Decide tab v0.1</div>
+    <h1>What still needs a human.</h1>
+    <p>Same stream as Home “Needs you.” Empty when nothing is open. Live: one clear decision at a time — Silvia prepares, you finish.</p>
+  </div>
+
+  <div class="row">
+    <!-- EMPTY -->
+    <div class="col">
+      <div class="col-label">A · Decide empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier muted">Connect</span>
+          </div>
+          <div class="eyebrow">Decide</div>
+          <h1 class="hero">Nothing needs you.</h1>
+          <p class="lede empty">When a decision arises, it shows up here — and on Home under Needs you. One at a time.</p>
+
+          <div class="card night empty">
+            <div class="k">Needs you</div>
+            <h2>All clear.</h2>
+            <p>Silvia keeps running. You’ll see a card here only when something needs a human.</p>
+          </div>
+
+          <div class="list-card empty">
+            <div class="list-head">Open decisions</div>
+            <div class="list-row"><span class="muted">None right now</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="decide"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- LIVE -->
+    <div class="col">
+      <div class="col-label">B · Decide live</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>6:14</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier">Autopilot</span>
+          </div>
+          <div class="eyebrow">Decide</div>
+          <h1 class="hero">One decision needs you.</h1>
+          <p class="lede">Everything else is handled. Finish this and you’re clear.</p>
+
+          <div class="card night">
+            <div class="k">Needs you · Now</div>
+            <h2>Replace the car — inside the plan.</h2>
+            <p>Ceiling $41,200 · payment ≤ $485. Retirement target stays.</p>
+            <span class="badge">Open</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Waiting</div>
+            <div class="list-row tappable"><span>Refinance check · mortgage</span><span class="pill">Later</span></div>
+            <div class="list-row"><span class="muted">Silvia won’t surface these until the car is done.</span></div>
+          </div>
+
+          <div class="card">
+            <div class="k">How Decide works</div>
+            <h2>She prepares. You choose.</h2>
+            <p>Home shows the same Needs you card. Decide is the full list and the place you resolve it.</p>
+          </div>
+        </div>
+        <nav class="tabs" data-active="decide"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

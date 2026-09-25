@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Pay · Status &amp; history</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Pay · Pending · Failed · History</div>
+    <h1>Pending, failed, and the trail.</h1>
+    <p>Clear states when a rail is slow or fails — plus history on Pay. Tab copy stays Pay only.</p>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="col-label">Pending</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:43</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Pay
+          </div>
+          <div class="eyebrow">Send</div>
+          <span class="status-chip pending">Pending</span>
+          <div class="confirm-amount">$48.00</div>
+          <div class="confirm-to">to Maya Chen · Venmo</div>
+          <p class="lede">Venmo is processing. Spendable already reserved. I’ll update this when it clears.</p>
+
+          <div class="list-card">
+            <div class="list-row"><span>Submitted</span><span>9:42</span></div>
+            <div class="list-row"><span>Rail</span><span>Venmo</span></div>
+            <div class="list-row"><span>For</span><span>Dinner Friday</span></div>
+            <div class="list-row"><span>Reserved</span><span>$48 from spendable</span></div>
+          </div>
+
+          <div class="action-btn secondary" style="width:100%">Notify me when done</div>
+        </div>
+        <nav class="tabs" data-active="pay"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">Failed</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:45</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Pay
+          </div>
+          <div class="eyebrow">Send</div>
+          <span class="status-chip failed">Failed</span>
+          <div class="confirm-amount">$48.00</div>
+          <div class="confirm-to">to Maya Chen · Venmo</div>
+          <p class="lede">Venmo declined the transfer. Spendable is restored. Nothing left the plan.</p>
+
+          <div class="card">
+            <div class="k">Silvia</div>
+            <h2>Try Zelle, or retry Venmo.</h2>
+            <p>Same person and amount. I’ll use spendable again only when you confirm.</p>
+          </div>
+
+          <div class="action-btn primary" style="width:100%;margin-bottom:8px">Retry on Zelle</div>
+          <div class="action-btn secondary" style="width:100%;margin-bottom:8px">Retry Venmo</div>
+          <div class="action-btn ghost" style="width:100%">Dismiss</div>
+        </div>
+        <nav class="tabs" data-active="pay"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">History</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>10:02</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Pay
+          </div>
+          <div class="eyebrow">History</div>
+          <h1 class="hero">All activity.</h1>
+          <p class="lede">Sends, requests, and rail notes — one list.</p>
+
+          <div class="list-card">
+            <div class="hist-row">
+              <span class="name">Maya · dinner</span>
+              <span class="amt out">−$48.00</span>
+              <span class="when">Venmo · Pending</span>
+            </div>
+            <div class="hist-row">
+              <span class="name">Jordan · concert</span>
+              <span class="amt in">+$60.00</span>
+              <span class="when">Zelle · Request open</span>
+            </div>
+            <div class="hist-row">
+              <span class="name">Chris · rent share</span>
+              <span class="amt out">−$650.00</span>
+              <span class="when">Zelle · Sep 12 · Sent</span>
+            </div>
+            <div class="hist-row">
+              <span class="name">Alex · paid you</span>
+              <span class="amt in">+$25.00</span>
+              <span class="when">Cash App · Sep 10 · Received</span>
+            </div>
+            <div class="hist-row">
+              <span class="name">Sam · groceries</span>
+              <span class="amt out">−$32.00</span>
+              <span class="when">Venmo · Sep 8 · Failed · restored</span>
+            </div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="pay"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

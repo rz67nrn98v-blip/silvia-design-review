@@ -1,0 +1,73 @@
+/* SILVIA — Design tokens v0.1
+   Native phone app. Never a website product.
+   North star: Autopilot morning film (phone in hand).
+*/
+
+:root {
+  --paper: #F3F1EB;
+  --paper-elevated: #FAF8F4;
+  --forest: #1C5C48;
+  --forest-soft: #2A6B56;
+  --forest-muted: #D8E6E0;
+  --night: #0B1412;
+  --night-elevated: #14201C;
+  --ink: #0B1412;
+  --ink-secondary: rgba(11, 20, 18, 0.62);
+  --ink-tertiary: rgba(11, 20, 18, 0.42);
+  --on-night: #F3F1EB;
+  --on-forest: #F3F1EB;
+  --line: rgba(11, 20, 18, 0.10);
+  --line-strong: rgba(11, 20, 18, 0.16);
+  --sage: #C5D9CF;
+  --warn: #C4A574;
+  --danger: #8B3A3A;
+
+  --font-display: "Instrument Serif", "Iowan Old Style", Palatino, serif;
+  --font-body: "Figtree", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --text-hero: 34px;
+  --text-display: 28px;
+  --text-title: 22px;
+  --text-body: 16px;
+  --text-callout: 15px;
+  --text-label: 11px;
+  --text-caption: 13px;
+  --text-mono: 13px;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.25;
+  --leading-body: 1.45;
+  --tracking-label: 0.08em;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+
+  --screen-pad-x: 20px;
+  --screen-pad-top: 8px;
+  --screen-pad-bottom: 16px;
+  --tab-bar-h: 72px;
+  --status-bar-h: 54px;
+  --safe-bottom: 12px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 0 rgba(11, 20, 18, 0.04), 0 8px 24px rgba(11, 20, 18, 0.04);
+  --shadow-sheet: 0 -8px 32px rgba(11, 20, 18, 0.08);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-med: 280ms;
+}

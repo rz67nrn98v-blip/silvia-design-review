@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Portfolio · Browse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Portfolio · Browse · review</div>
+    <h1>Catalog first. Tickers second.</h1>
+    <p>Pre-filled categories so people can browse without knowing symbols. Search still works. Favorites and Market news sit here. Discovery only — Trading stays under Silvia’s rules.</p>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Browse · catalog</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Portfolio
+          </div>
+          <div class="eyebrow">Browse</div>
+          <h1 class="hero">Start with a category.</h1>
+          <p class="lede">You don’t need a ticker. Pick a shelf — or search if you know one.</p>
+          <div class="search"><span class="ph">Search name or ticker…</span></div>
+
+          <div class="list-head" style="margin-bottom:8px">Categories</div>
+          <div class="cat-grid">
+            <div class="cat">Tech giants<span class="sub">Mega-cap</span></div>
+            <div class="cat">Dividend<span class="sub">Income</span></div>
+            <div class="cat">Energy<span class="sub">Oil &amp; power</span></div>
+            <div class="cat">Healthcare<span class="sub">Pharma &amp; devices</span></div>
+            <div class="cat">Commercial space<span class="sub">Thesis</span></div>
+            <div class="cat">ETFs<span class="sub">Broad exposure</span></div>
+            <div class="cat">Crypto-adjacent<span class="sub">Listed</span></div>
+            <div class="cat">Most held<span class="sub">Popular</span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Market news</div>
+            <div class="list-row"><span class="muted">Connect Portfolio to see headlines</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="portfolio"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">B · Browse · live</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>10:12</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Portfolio
+          </div>
+          <div class="eyebrow">Browse</div>
+          <h1 class="hero">Markets to watch.</h1>
+          <p class="lede">Categories, search, news — then Favorite. I still execute.</p>
+          <div class="search"><span class="ph">Search name or ticker…</span></div>
+
+          <div class="list-head" style="margin-bottom:8px">Categories</div>
+          <div class="cat-grid">
+            <div class="cat">Tech giants<span class="sub">12 names</span></div>
+            <div class="cat">Dividend<span class="sub">18 names</span></div>
+            <div class="cat">Energy<span class="sub">9 names</span></div>
+            <div class="cat">Commercial space<span class="sub">6 names</span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Trending today</div>
+            <div class="list-row tappable">
+              <span class="name-stack"><span class="nm">NVIDIA</span><span class="ticker-sym">NVDA</span></span>
+              <span class="chg up">+1.8%</span>
+            </div>
+            <div class="list-row tappable">
+              <span class="name-stack"><span class="nm">Exxon</span><span class="ticker-sym">XOM</span></span>
+              <span class="chg up">+3.2%</span>
+            </div>
+            <div class="list-row tappable">
+              <span class="name-stack"><span class="nm">Costco</span><span class="ticker-sym">COST</span></span>
+              <span class="chg up">+0.6%</span>
+            </div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Market news</div>
+            <div class="list-row" style="flex-direction:column;align-items:flex-start;gap:4px;padding:12px 0">
+              <span class="ticker-sym" style="color:var(--forest);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-size:11px">Energy</span>
+              <span style="font-size:14px;font-weight:500;line-height:1.35">Supply shock lifts crude overnight</span>
+              <span class="muted" style="font-size:12px">32m ago · Silvia trimmed risk</span>
+            </div>
+            <div class="list-row tappable"><span>All market news</span><span class="arrow">›</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="portfolio"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Pay · Send / Request</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Money · Pay pay</div>
+    <h1>Send &amp; request inside Silvia.</h1>
+    <p>Venmo, Zelle, Cash App as rails — not destinations. Empty until linked. Live: choose rail, person, amount; recent activity stays on Money.</p>
+  </div>
+
+  <div class="row">
+    <!-- EMPTY -->
+    <div class="col">
+      <div class="col-label">A · Pay pay empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="detail-type">Pay</div>
+          <h1 class="detail-title">No rails linked.</h1>
+          <p class="detail-sub">Connect Venmo, Zelle, or Cash App to send and request without leaving Silvia.</p>
+          <div class="action-row">
+            <div class="action-btn ghost">Send</div>
+            <div class="action-btn ghost">Request</div>
+          </div>
+          <div class="list-card empty">
+            <div class="list-head">Available rails</div>
+            <div class="list-row"><span>Venmo</span><span class="muted">Not linked</span></div>
+            <div class="list-row"><span>Zelle</span><span class="muted">Not linked</span></div>
+            <div class="list-row"><span>Cash App</span><span class="muted">Not linked</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- LIVE SEND -->
+    <div class="col">
+      <div class="col-label">B · Send (live)</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="detail-type">Pay</div>
+          <h1 class="detail-title">Send money.</h1>
+          <p class="detail-sub">From spendable. Silvia picks a rail; you can change it.</p>
+
+          <div class="seg">
+            <div class="opt on">Send</div>
+            <div class="opt">Request</div>
+          </div>
+
+          <div class="field">
+            <div class="k">Amount</div>
+            <div class="v amount">$48</div>
+          </div>
+          <div class="field">
+            <div class="k">To</div>
+            <div class="v">Maya Chen · @maya.c</div>
+          </div>
+          <div class="field">
+            <div class="k">For</div>
+            <div class="v">Dinner Friday</div>
+          </div>
+
+          <div class="k" style="margin: 4px 0 8px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-tertiary);">Rail</div>
+          <div style="margin-bottom: 14px;">
+            <span class="rail-chip">Venmo</span>
+            <span class="rail-chip off">Zelle</span>
+            <span class="rail-chip off">Cash App</span>
+          </div>
+
+          <div class="card">
+            <div class="k">From</div>
+            <h2>Spendable · $496</h2>
+            <p>Leaves $448 this week. Doesn’t touch bills or debt reserves.</p>
+            <span class="badge quiet">Inside plan</span>
+          </div>
+
+          <div class="action-btn primary" style="width:100%; margin-top: 4px;">Send $48 via Venmo</div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- LIVE REQUEST -->
+    <div class="col">
+      <div class="col-label">C · Request (live)</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="detail-type">Pay</div>
+          <h1 class="detail-title">Request money.</h1>
+          <p class="detail-sub">Lands in checking when they pay. Same rails.</p>
+
+          <div class="seg">
+            <div class="opt">Send</div>
+            <div class="opt on">Request</div>
+          </div>
+
+          <div class="field">
+            <div class="k">Amount</div>
+            <div class="v amount">$60</div>
+          </div>
+          <div class="field">
+            <div class="k">From</div>
+            <div class="v">Jordan Lee · Zelle</div>
+          </div>
+          <div class="field">
+            <div class="k">For</div>
+            <div class="v">Concert tickets</div>
+          </div>
+
+          <div class="k" style="margin: 4px 0 8px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-tertiary);">Rail</div>
+          <div style="margin-bottom: 14px;">
+            <span class="rail-chip off">Venmo</span>
+            <span class="rail-chip">Zelle</span>
+            <span class="rail-chip off">Cash App</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Open requests</div>
+            <div class="list-row"><span>Jordan · concert</span><span class="pill">$60 · pending</span></div>
+            <div class="list-row"><span>Sam · groceries</span><span class="pill">$32 · Venmo</span></div>
+          </div>
+
+          <div class="action-btn primary" style="width:100%;">Request $60 via Zelle</div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

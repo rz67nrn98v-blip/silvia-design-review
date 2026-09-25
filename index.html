@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Design review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root { --paper:#F3F1EB; --forest:#1C5C48; --night:#0B1412; --ink:#1a1a1a; --muted:#5c5c5c; --line:#ddd8ce; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Figtree, system-ui, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .tag { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--forest); font-weight: 600; margin-bottom: 12px; }
+    h1 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.15; margin: 0 0 12px; }
+    .lede { color: var(--muted); font-size: 16px; line-height: 1.5; margin: 0 0 36px; }
+    section { margin-bottom: 32px; }
+    h2 { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--forest); margin: 0 0 12px; font-weight: 600; }
+    ul { list-style: none; padding: 0; margin: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; }
+    li + li { border-top: 1px solid var(--line); }
+    a { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; }
+    a:hover { background: #faf8f3; }
+    a span { color: var(--muted); font-weight: 400; font-size: 13px; }
+    .note { font-size: 13px; color: var(--muted); margin-top: 28px; line-height: 1.45; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="tag">Silvia · Design review</div>
+    <h1>Phone shells for review</h1>
+    <p class="lede">Static design specs — not the product. Product is native iOS. Open a link, click through the phone frames.</p>
+
+    <section>
+      <h2>Pay depth (latest)</h2>
+      <ul>
+        <li><a href="shell/pay.html">Pay hub <span>send / request / history</span></a></li>
+        <li><a href="shell/pay-compose.html">Compose <span>send or request</span></a></li>
+        <li><a href="shell/pay-confirm.html">Confirm <span>before it goes</span></a></li>
+        <li><a href="shell/pay-status.html">Status <span>pending / failed / history</span></a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Portfolio discovery</h2>
+      <ul>
+        <li><a href="shell/portfolio.html">Portfolio home</a></li>
+        <li><a href="shell/portfolio-browse.html">Browse</a></li>
+        <li><a href="shell/portfolio-category.html">Category catalog</a></li>
+        <li><a href="shell/portfolio-news.html">Market news</a></li>
+        <li><a href="shell/portfolio-favorites.html">Favorites</a></li>
+        <li><a href="shell/portfolio-ticker.html">Ticker</a></li>
+        <li><a href="shell/portfolio-trades.html">Trading</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Money · Home · Decide · Ask</h2>
+      <ul>
+        <li><a href="shell/money.html">Money</a></li>
+        <li><a href="shell/money-card.html">Card detail</a></li>
+        <li><a href="shell/money-loan.html">Auto loan</a></li>
+        <li><a href="shell/money-mortgage.html">Mortgage</a></li>
+        <li><a href="shell/index.html">Home states</a></li>
+        <li><a href="shell/decide.html">Decide</a></li>
+        <li><a href="shell/decide-detail.html">Decide detail</a></li>
+        <li><a href="shell/ask.html">Ask</a></li>
+      </ul>
+    </section>
+
+    <p class="note">Concept film demo (tiers story, not these shells): <a href="https://wave-hill-eagle-blend.grok.me/" style="display:inline;padding:0;color:var(--forest)">wave-hill-eagle-blend.grok.me</a></p>
+  </main>
+</body>
+</html>

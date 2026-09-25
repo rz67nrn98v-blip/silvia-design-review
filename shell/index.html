@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Home shell v0.3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Home v0.3</div>
+    <h1>Empty. Quiet. Elevated.</h1>
+    <p>Three Home states: first-run empty, connected with nothing material (quiet Current Status), and material change + one decision. Continuous autonomy — not a morning ritual.</p>
+  </div>
+
+  <div class="row">
+    <!-- A EMPTY -->
+    <div class="col">
+      <div class="col-label">A · First-run / empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier muted">Connect tier</span>
+          </div>
+          <div class="eyebrow">While you were away.</div>
+          <h1 class="hero">Nothing here yet.</h1>
+          <p class="lede empty">Connect accounts and choose a tier. Silvia fills this in as she runs your life.</p>
+          <div class="chips">
+            <div class="chip empty"><div class="k">Bills</div><div class="v">—</div></div>
+            <div class="chip empty"><div class="k">Cash flow</div><div class="v">—</div></div>
+            <div class="chip empty"><div class="k">Portfolio</div><div class="v">—</div></div>
+            <div class="chip empty"><div class="k">Retirement</div><div class="v">—</div></div>
+          </div>
+          <div class="card empty">
+            <div class="k">Current Status</div>
+            <h2>Waiting on you.</h2>
+            <p>Once linked, quiet days stay quiet. Material changes surface here.</p>
+            <span class="badge quiet">Not connected</span>
+          </div>
+          <div class="card night empty">
+            <div class="k">Needs you</div>
+            <h2>No decisions yet.</h2>
+            <p>When something needs a human, it lands here — one at a time.</p>
+          </div>
+        </div>
+        <nav class="tabs" data-active="home"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- B QUIET -->
+    <div class="col">
+      <div class="col-label">B · Connected · quiet</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier">Autopilot</span>
+          </div>
+          <div class="eyebrow">While you were away.</div>
+          <h1 class="hero">All quiet.</h1>
+          <p class="lede">Nothing material since you last checked in. I’m still running the plan.</p>
+          <div class="chips">
+            <div class="chip"><div class="k">Bills</div><div class="v">Covered</div></div>
+            <div class="chip"><div class="k">Cash flow</div><div class="v">Healthy</div></div>
+            <div class="chip"><div class="k">Portfolio</div><div class="v">On plan</div></div>
+            <div class="chip"><div class="k">Retirement</div><div class="v">On track</div></div>
+          </div>
+          <div class="card">
+            <div class="k">Current Status</div>
+            <h2>On track.</h2>
+            <p>Quiet days stay quiet. I’ll elevate this only when something important changes.</p>
+            <span class="badge quiet">No action required</span>
+          </div>
+          <div class="card night empty">
+            <div class="k">Needs you</div>
+            <h2>Nothing needs you.</h2>
+            <p>When a decision does, it shows up here — one at a time.</p>
+          </div>
+        </div>
+        <nav class="tabs" data-active="home"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- C ELEVATED -->
+    <div class="col">
+      <div class="col-label">C · Material change</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>6:14</span><span>5G</span></div>
+        <div class="screen">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier">Autopilot</span>
+          </div>
+          <div class="eyebrow">While you were away.</div>
+          <h1 class="hero">I already handled what matters.</h1>
+          <p class="lede">Overnight ran. Risk adjusted. One decision still needs you.</p>
+          <div class="chips">
+            <div class="chip"><div class="k">Bills</div><div class="v">Covered</div></div>
+            <div class="chip"><div class="k">Cash flow</div><div class="v">Healthy</div></div>
+            <div class="chip"><div class="k">Portfolio</div><div class="v">Adjusted</div></div>
+            <div class="chip"><div class="k">Retirement</div><div class="v">On track</div></div>
+          </div>
+          <div class="card">
+            <div class="k">Current Status</div>
+            <h2>Energy shock — risk adjusted.</h2>
+            <p>Overnight move in energy. I reduced exposure before you checked in.</p>
+            <span class="badge">Material change</span>
+          </div>
+          <div class="card night">
+            <div class="k">Needs you</div>
+            <h2>Replace the car — inside the plan.</h2>
+            <p>Ceiling $41,200 · payment ≤ $485. Retirement target stays.</p>
+            <span class="badge">One decision</span>
+          </div>
+        </div>
+        <nav class="tabs" data-active="home"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="token-strip">
+    <div class="swatch"><div class="c" style="background:#F3F1EB"></div><div class="l">paper</div></div>
+    <div class="swatch"><div class="c" style="background:#1C5C48"></div><div class="l">forest</div></div>
+    <div class="swatch"><div class="c" style="background:#0B1412"></div><div class="l">night</div></div>
+    <div class="swatch"><div class="c" style="background:#D8E6E0"></div><div class="l">forest-muted</div></div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Ask tab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+  <style>
+    .chat {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+      min-height: 0;
+    }
+    .chat-scroll {
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-bottom: 8px;
+    }
+    .bubble {
+      max-width: 88%;
+      padding: 12px 14px;
+      border-radius: 16px;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .bubble.her {
+      align-self: flex-start;
+      background: var(--paper-elevated);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      border-bottom-left-radius: 6px;
+    }
+    .bubble.you {
+      align-self: flex-end;
+      background: var(--forest);
+      color: var(--on-forest, #F3F1EB);
+      border-bottom-right-radius: 6px;
+    }
+    .bubble .who {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      font-weight: 600;
+      opacity: 0.65;
+    }
+    .composer {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 12px;
+      background: var(--paper-elevated);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      margin-top: auto;
+    }
+    .composer .ph {
+      flex: 1;
+      font-size: 14px;
+      color: var(--ink-tertiary);
+    }
+    .composer .send {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: var(--on-forest, #F3F1EB);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .composer .send svg { width: 16px; height: 16px; }
+    .chips-ask {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 4px 0 8px;
+    }
+    .chip-ask {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      font-size: 13px;
+      color: var(--forest);
+      background: transparent;
+      font-weight: 500;
+    }
+    .ask-empty {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      padding: 8px 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Ask tab v0.1</div>
+    <h1>Silvia herself.</h1>
+    <p>Built-in personal assistant for the household’s financial life. OS conversation surface — not a bolt-on chatbot. She knows Money, Pay, Decide, Portfolio, and Home.</p>
+  </div>
+
+  <div class="row">
+    <!-- EMPTY / FIRST RUN -->
+    <div class="col">
+      <div class="col-label">A · Ask first-run</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier muted">Connect</span>
+          </div>
+          <div class="eyebrow">Ask</div>
+          <div class="ask-empty">
+            <h1 class="hero">I’m Silvia.</h1>
+            <p class="lede empty">I run the financial life of this household. Ask me anything once accounts are linked.</p>
+            <div class="chips-ask">
+              <span class="chip-ask">What can you do?</span>
+              <span class="chip-ask">How do tiers work?</span>
+            </div>
+          </div>
+          <div class="composer">
+            <span class="ph">Message Silvia…</span>
+            <span class="send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </div>
+        <nav class="tabs" data-active="ask"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- LIVE -->
+    <div class="col">
+      <div class="col-label">B · Ask live</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>6:18</span><span>5G</span></div>
+        <div class="screen">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier">Autopilot</span>
+          </div>
+          <div class="eyebrow">Ask</div>
+          <div class="chat">
+            <div class="chat-scroll">
+              <div class="bubble her">
+                <div class="who">Silvia</div>
+                Overnight energy shock is handled. Risk is lower. One decision still needs you — the car, inside the plan.
+              </div>
+              <div class="bubble you">
+                How much can I spend this week?
+              </div>
+              <div class="bubble her">
+                <div class="who">Silvia</div>
+                Four hundred ninety-six dollars. Paycheck is routed. Bills and debts are reserved. That number is yours.
+              </div>
+              <div class="bubble you">
+                And SpaceX?
+              </div>
+              <div class="bubble her">
+                <div class="who">Silvia</div>
+                Thesis is intact. Entry is not. I’m watching. A great company can still be a bad purchase.
+              </div>
+            </div>
+            <div class="chips-ask">
+              <span class="chip-ask">Show the car decision</span>
+              <span class="chip-ask">Trading today</span>
+            </div>
+            <div class="composer">
+              <span class="ph">Message Silvia…</span>
+              <span class="send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="ask"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

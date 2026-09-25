@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Auto loan detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Money · Auto loan detail</div>
+    <h1>Loan drill-down.</h1>
+    <p>Balance, payment, schedule, and status — same pattern as cards. Empty until linked.</p>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Loan empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="detail-type">Auto loan</div>
+          <h1 class="detail-title">Not linked yet.</h1>
+          <p class="detail-sub">Connect a loan to see balance, payment schedule, and status.</p>
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Balance</div><div class="v">—</div></div>
+            <div class="stat"><div class="k">Payment</div><div class="v">—</div></div>
+          </div>
+          <div class="list-card empty">
+            <div class="list-head">Schedule</div>
+            <div class="list-row"><span class="muted">No schedule yet</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">B · Honda auto loan</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="detail-type">Auto loan · Honda Financial</div>
+          <h1 class="detail-title">2019 CR-V</h1>
+          <p class="detail-sub">On schedule. Payment reserved from each paycheck.</p>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Balance</div><div class="v debt">$18,420</div><div class="s">Principal</div></div>
+            <div class="stat"><div class="k">Payment</div><div class="v">$385</div><div class="s">Due Sep 20</div></div>
+            <div class="stat"><div class="k">Rate</div><div class="v">4.9%</div><div class="s">Fixed</div></div>
+            <div class="stat"><div class="k">Remaining</div><div class="v">48 mo</div><div class="s">Pays off 2030</div></div>
+          </div>
+
+          <div class="card">
+            <div class="k">Status</div>
+            <h2>Current · autopaid.</h2>
+            <p>Next $385 reserved from this paycheck. No past-due. Insurance verified.</p>
+            <span class="badge quiet">On schedule</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Payment schedule</div>
+            <div class="hist-row"><span class="name">Sep 20 · Upcoming</span><span class="when">Reserved</span><span class="amt pay">$385.00</span></div>
+            <div class="hist-row"><span class="name">Aug 20 · Paid</span><span class="when">On time</span><span class="amt pay">$385.00</span></div>
+            <div class="hist-row"><span class="name">Jul 20 · Paid</span><span class="when">On time</span><span class="amt pay">$385.00</span></div>
+            <div class="hist-row"><span class="name">Jun 20 · Paid</span><span class="when">On time</span><span class="amt pay">$385.00</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

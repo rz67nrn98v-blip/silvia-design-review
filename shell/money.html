@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Money tab v0.4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Money tab v0.4</div>
+    <h1>Cash, debts, and bills.</h1>
+    <p>Bank, cash, cards, loans, bills — instrument drill-downs. Pay lives on the Pay tab.</p>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Money empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier muted">Connect</span>
+          </div>
+          <div class="eyebrow">Money</div>
+          <h1 class="hero">No accounts yet.</h1>
+          <p class="lede empty">Link bank, cards, and loans. Spendable, debts, and bills appear when Silvia can see them.</p>
+          <div class="card empty">
+            <div class="k">Spendable</div>
+            <h2 class="num empty-num">—</h2>
+            <p>What you can use without touching the plan.</p>
+          </div>
+          <div class="card empty crosslink">
+            <div class="k">Pay</div>
+            <h2>Lives on the Pay tab.</h2>
+            <p>Link Venmo, Zelle, or Cash App there — not here.</p>
+          </div>
+          <div class="list-card empty">
+            <div class="list-head">Accounts</div>
+            <div class="list-row"><span>Checking</span><span class="muted">Not linked</span></div>
+            <div class="list-row"><span>Savings</span><span class="muted">Not linked</span></div>
+          </div>
+          <div class="list-card empty">
+            <div class="list-head">Debts</div>
+            <div class="list-row"><span>Credit cards</span><span class="muted">Not linked</span></div>
+            <div class="list-row"><span>Auto loan</span><span class="muted">Not linked</span></div>
+            <div class="list-row"><span>Mortgage</span><span class="muted">Not linked</span></div>
+          </div>
+          <div class="card empty">
+            <div class="k">Bills</div>
+            <h2>None tracked yet.</h2>
+            <p>Upcoming bills land here once accounts are connected.</p>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">B · Money live</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier">Autopilot</span>
+          </div>
+          <div class="eyebrow">Money</div>
+          <h1 class="hero">What’s yours to spend.</h1>
+          <p class="lede">Paycheck routed. Debts scheduled. The rest is clear.</p>
+
+          <div class="card spend">
+            <div class="k">Spendable this week</div>
+            <h2 class="num">$496</h2>
+            <p>Really yours. No mental math.</p>
+          </div>
+          <div class="card crosslink">
+            <div class="k">Pay</div>
+            <h2>Send &amp; request on Pay.</h2>
+            <p>Venmo, Zelle, Cash App — open the Pay tab.</p>
+          </div>
+
+          <div class="mini-row">
+            <div class="mini"><div class="k">Available today</div><div class="v">$2,184</div><div class="s">Bills reserved</div></div>
+            <div class="mini"><div class="k">Next paycheck</div><div class="v">3 days</div><div class="s">$3,126</div></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Accounts</div>
+            <p class="section-note">Tap for activity</p>
+            <div class="list-row tappable"><span>Checking ·•••4820</span><span><span class="mono">$4,820</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Savings ·•••1102</span><span><span class="mono">$12,400</span><span class="arrow">›</span></span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Debts</div>
+            <p class="section-note">Cards, auto loan, mortgage, and other balances you owe</p>
+            <div class="list-row tappable"><span>Sapphire Reserve</span><span><span class="mono">−$1,240</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Amex Gold</span><span><span class="mono">−$380</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Auto loan · Honda</span><span><span class="mono">−$18,420</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Mortgage · Oak St</span><span><span class="mono">−$284,600</span><span class="arrow">›</span></span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Paycheck · routed</div>
+            <div class="list-row"><span>Mortgage</span><span class="pill">$1,840 · Reserved</span></div>
+            <div class="list-row"><span>Auto loan</span><span class="pill">$385 · Scheduled</span></div>
+            <div class="list-row"><span>Cards (min+)</span><span class="pill">$420 · Reserved</span></div>
+            <div class="list-row"><span>Utilities</span><span class="pill">$214 · Reserved</span></div>
+            <div class="list-row"><span>Retirement</span><span class="pill">$410 · Increased</span></div>
+            <div class="list-row"><span>Spendable</span><span class="pill forest">$496 · Yours</span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Bills · next</div>
+            <div class="list-row"><span>Auto loan · Sep 20</span><span class="pill">$385</span></div>
+            <div class="list-row"><span>Sapphire · Sep 24</span><span class="pill">$240 due</span></div>
+            <div class="list-row"><span>Mortgage · Oct 1</span><span class="pill">Covered</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

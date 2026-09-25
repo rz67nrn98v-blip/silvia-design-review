@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Mortgage detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Money · Mortgage detail (pattern exemplar)</div>
+    <h1>Same pattern. Different instrument.</h1>
+    <p>Mortgage uses the universal Money drill-down: stats, Silvia’s plan, payment schedule. Student loans and other liabilities follow the same structure.</p>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Mortgage empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="detail-type">Mortgage</div>
+          <h1 class="detail-title">Not linked yet.</h1>
+          <p class="detail-sub">Connect a mortgage to see balance, escrow, and payment schedule.</p>
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Balance</div><div class="v">—</div></div>
+            <div class="stat"><div class="k">Payment</div><div class="v">—</div></div>
+          </div>
+          <div class="list-card empty">
+            <div class="list-head">Schedule</div>
+            <div class="list-row"><span class="muted">No schedule yet</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">B · Primary mortgage</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="detail-type">Mortgage · Rocket Mortgage</div>
+          <h1 class="detail-title">412 Oak Street</h1>
+          <p class="detail-sub">Escrow current. Payment reserved each paycheck.</p>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Balance</div><div class="v debt">$284,600</div><div class="s">Principal</div></div>
+            <div class="stat"><div class="k">Payment</div><div class="v">$1,840</div><div class="s">P&I + escrow</div></div>
+            <div class="stat"><div class="k">Rate</div><div class="v">6.25%</div><div class="s">30-year fixed</div></div>
+            <div class="stat"><div class="k">Next due</div><div class="v">Oct 1</div><div class="s">Reserved</div></div>
+          </div>
+
+          <div class="card">
+            <div class="k">Silvia’s plan</div>
+            <h2>Pay $1,840 on Oct 1.</h2>
+            <p>Full PITI from paycheck routing. Escrow cushion healthy. No refinance flag this month.</p>
+            <span class="badge quiet">On schedule</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Payment schedule</div>
+            <div class="hist-row"><span class="name">Oct 1 · Upcoming</span><span class="when">Reserved</span><span class="amt pay">$1,840.00</span></div>
+            <div class="hist-row"><span class="name">Sep 1 · Paid</span><span class="when">On time</span><span class="amt pay">$1,840.00</span></div>
+            <div class="hist-row"><span class="name">Aug 1 · Paid</span><span class="when">On time</span><span class="amt pay">$1,840.00</span></div>
+            <div class="hist-row"><span class="name">Jul 1 · Paid</span><span class="when">On time</span><span class="amt pay">$1,840.00</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Credit card detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Money · Credit card detail</div>
+    <h1>Card drill-down.</h1>
+    <p>Balance, payment due, and purchase history. Empty until the card is linked.</p>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Card empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="detail-type">Credit card</div>
+          <h1 class="detail-title">Not linked yet.</h1>
+          <p class="detail-sub">Connect a card to see balance, payment, and purchases.</p>
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Balance</div><div class="v">—</div></div>
+            <div class="stat"><div class="k">Payment due</div><div class="v">—</div></div>
+          </div>
+          <div class="list-card empty">
+            <div class="list-head">Recent activity</div>
+            <div class="list-row"><span class="muted">No purchases yet</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">B · Sapphire Reserve</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Money
+          </div>
+          <div class="detail-type">Credit card ·•••4521</div>
+          <h1 class="detail-title">Sapphire Reserve</h1>
+          <p class="detail-sub">Autopilot reserves the payment. You still approve extras.</p>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Outstanding</div><div class="v debt">$1,240</div><div class="s">As of today</div></div>
+            <div class="stat"><div class="k">Payment due</div><div class="v">$240</div><div class="s">Sep 24 · Reserved</div></div>
+            <div class="stat"><div class="k">Credit limit</div><div class="v">$12,000</div><div class="s">10% utilized</div></div>
+            <div class="stat"><div class="k">APR</div><div class="v">22.9%</div><div class="s">Purchase</div></div>
+          </div>
+
+          <div class="card">
+            <div class="k">Silvia’s plan</div>
+            <h2>Pay $240 on due date.</h2>
+            <p>Minimum + buffer from this paycheck. Statement closes Sep 18.</p>
+            <span class="badge quiet">On schedule</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Purchase history</div>
+            <div class="hist-row"><span class="name">Whole Foods</span><span class="when">Sep 14</span><span class="amt charge">−$86.40</span></div>
+            <div class="hist-row"><span class="name">Shell Fuel</span><span class="when">Sep 12</span><span class="amt charge">−$54.20</span></div>
+            <div class="hist-row"><span class="name">Payment · Thank you</span><span class="when">Sep 10</span><span class="amt pay">+$400.00</span></div>
+            <div class="hist-row"><span class="name">Apple</span><span class="when">Sep 8</span><span class="amt charge">−$14.99</span></div>
+            <div class="hist-row"><span class="name">Costco</span><span class="when">Sep 6</span><span class="amt charge">−$212.17</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

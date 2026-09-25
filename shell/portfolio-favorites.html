@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Portfolio · Favorites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+  <style>
+    .ticker { font-family: var(--font-mono); font-size: 12px; color: var(--ink-secondary); }
+    .name-stack { display: flex; flex-direction: column; gap: 2px; }
+    .name-stack .nm { font-size: 15px; font-weight: 500; }
+    .chg.up { color: var(--forest); font-weight: 600; font-size: 13px; }
+    .chg.dn { color: var(--ink-secondary); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Portfolio · Favorites</div>
+    <h1>Watchlist that feeds convictions.</h1>
+    <p>Empty until you save something. Live list — not a trade ticket. Ask Silvia when you want action.</p>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Favorites empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Portfolio
+          </div>
+          <div class="eyebrow">Favorites</div>
+          <h1 class="hero">Nothing saved.</h1>
+          <p class="lede empty">Browse or look up a ticker. Star it here. I’ll watch with your convictions.</p>
+          <div class="action-btn secondary" style="width:100%">Browse markets</div>
+        </div>
+        <nav class="tabs" data-active="portfolio"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-label">B · Favorites live</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>10:12</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Portfolio
+          </div>
+          <div class="eyebrow">Favorites</div>
+          <h1 class="hero">Watching 3.</h1>
+          <p class="lede">These feed convictions. I still execute under your rules.</p>
+          <div class="list-card">
+            <div class="list-head">Watchlist</div>
+            <div class="list-row tappable">
+              <span class="name-stack"><span class="nm">Rocket Lab</span><span class="ticker">RKLB</span></span>
+              <span class="chg up">+2.4%</span>
+            </div>
+            <div class="list-row tappable">
+              <span class="name-stack"><span class="nm">Costco</span><span class="ticker">COST</span></span>
+              <span class="chg up">+0.6%</span>
+            </div>
+            <div class="list-row tappable">
+              <span class="name-stack"><span class="nm">SpaceX</span><span class="ticker">PRIVATE · thesis</span></span>
+              <span class="pill">Wait</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="k">Silvia</div>
+            <h2>I’m watching with you.</h2>
+            <p>Say the word if risk-reward moves inside your rules. No impulse tickets.</p>
+            <span class="badge quiet">Ask to act</span>
+          </div>
+          <div class="action-btn secondary" style="width:100%">Browse more</div>
+        </div>
+        <nav class="tabs" data-active="portfolio"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>
