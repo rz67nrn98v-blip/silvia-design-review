@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Core · Onboard · Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Core · First-run · Connect</div>
+    <h1>Start with accounts — or type it in.</h1>
+    <p>Both paths visible. Link payroll and bills, or enter net pay and a bill list. She never invents numbers. Progressive, not a 12-step wizard.</p>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Empty · start</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier muted">Core</span>
+          </div>
+          <div class="eyebrow">First run</div>
+          <h1 class="hero">Build Anthony’s plan.</h1>
+          <p class="lede empty">Income and expenses in. Spendable, buckets, and autopay out. One confirm — then she runs it.</p>
+
+          <div class="card empty">
+            <div class="k">Path 1</div>
+            <h2>Link accounts.</h2>
+            <p>Payroll deposits, checking, and recurring bills. She reads what she needs.</p>
+          </div>
+
+          <div class="card empty">
+            <div class="k">Path 2</div>
+            <h2>Enter manually.</h2>
+            <p>Net pay + cadence, then a bill list. Same plan either way.</p>
+          </div>
+
+          <div class="list-card empty">
+            <div class="list-head">Still needed</div>
+            <div class="list-row"><span>Income</span><span class="muted">Waiting</span></div>
+            <div class="list-row"><span>Expenses</span><span class="muted">Waiting</span></div>
+            <div class="list-row"><span>Plan confirm</span><span class="muted">Later</span></div>
+          </div>
+
+          <div class="action-btn primary" style="width:100%">Link accounts</div>
+          <div class="action-btn ghost" style="width:100%;margin-top:8px">Enter income &amp; bills</div>
+        </div>
+        <nav class="tabs" data-active="home"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">B · Path chosen · linking</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            First run
+          </div>
+          <div class="app-bar" style="margin-bottom:12px">
+            <span class="eyebrow" style="margin:0">Connect</span>
+            <span class="tier">Core</span>
+          </div>
+          <h1 class="hero">Link what she needs.</h1>
+          <p class="lede">Checking for spendable. Payroll for income. Bills and cards for the schedule. Manual entry stays available.</p>
+
+          <div class="list-card">
+            <div class="list-head">Accounts</div>
+            <p class="section-note">Tap to connect</p>
+            <div class="list-row tappable"><span>Checking</span><span><span class="pill">Required</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Payroll / direct deposit</span><span><span class="pill">Income</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Credit cards</span><span><span class="pill">Bills</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Loans · mortgage / auto</span><span><span class="pill">Optional</span><span class="arrow">›</span></span></div>
+          </div>
+
+          <div class="card">
+            <div class="k">Or skip linking</div>
+            <h2>Type income &amp; bills.</h2>
+            <p>Same audit and plan propose. Banks can connect later.</p>
+            <span class="badge quiet">Manual path</span>
+          </div>
+
+          <div class="action-btn primary" style="width:100%">Continue with linked</div>
+          <div class="action-btn ghost" style="width:100%;margin-top:8px">Enter manually instead</div>
+        </div>
+        <nav class="tabs" data-active="home"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

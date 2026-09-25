@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Core · Onboard · Income &amp; expenses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Core · First-run · Inputs</div>
+    <h1>Income and expenses.</h1>
+    <p>Capture or review what landed from links — or typed in. Net pay preferred. Each bill has amount, due window, priority. No invented numbers.</p>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Capture · empty fields</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            First run
+          </div>
+          <div class="app-bar" style="margin-bottom:12px">
+            <span class="eyebrow" style="margin:0">Inputs</span>
+            <span class="tier">Core</span>
+          </div>
+          <h1 class="hero">What comes in. What goes out.</h1>
+          <p class="lede empty">Fill both. She builds the plan from these — not guesses.</p>
+
+          <div class="list-card">
+            <div class="list-head">Income</div>
+            <div class="field" style="border-top:none;padding-top:4px">
+              <div class="k">Net pay</div>
+              <div class="v placeholder">Amount</div>
+            </div>
+            <div class="field">
+              <div class="k">Cadence</div>
+              <div class="v placeholder">Biweekly · monthly · …</div>
+            </div>
+            <div class="field">
+              <div class="k">Next deposit</div>
+              <div class="v placeholder">Date</div>
+            </div>
+          </div>
+
+          <div class="list-card empty">
+            <div class="list-head">Expenses · bill list</div>
+            <div class="list-row"><span class="muted">No bills yet</span></div>
+            <div class="list-row tappable"><span>Add a bill</span><span class="arrow">›</span></div>
+          </div>
+
+          <div class="card empty">
+            <div class="k">Then</div>
+            <h2>Audit → propose → confirm once.</h2>
+            <p>She won’t run autopay until you confirm the plan.</p>
+          </div>
+
+          <div class="action-btn primary" style="width:100%;opacity:0.45">Continue</div>
+        </div>
+        <nav class="tabs" data-active="home"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">B · Review · Anthony</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            First run
+          </div>
+          <div class="app-bar" style="margin-bottom:12px">
+            <span class="eyebrow" style="margin:0">Inputs · review</span>
+            <span class="tier">Core</span>
+          </div>
+          <h1 class="hero">Looks right?</h1>
+          <p class="lede">From linked accounts and a few you typed. Edit anything before the audit.</p>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Income</div><div class="v">$3,840</div><div class="s">Net · biweekly</div></div>
+            <div class="stat"><div class="k">Expenses</div><div class="v">$2,679</div><div class="s">8 bills · cycle</div></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Income</div>
+            <div class="list-row"><span>Payroll · ACME</span><span class="mono">$3,840</span></div>
+            <div class="list-row"><span>Cadence</span><span class="muted">Biweekly · Fri</span></div>
+            <div class="list-row"><span>Next deposit</span><span class="muted">Oct 3</span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Bill list</div>
+            <p class="section-note">Amount · due · priority</p>
+            <div class="list-row tappable"><span>Mortgage</span><span><span class="mono">$1,840</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Auto loan</span><span><span class="mono">$312</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Sapphire · min</span><span><span class="mono">$240</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Electric</span><span><span class="mono">$214</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Internet</span><span><span class="mono">$79</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>+ 3 more</span><span class="arrow">›</span></div>
+          </div>
+
+          <div class="action-btn primary" style="width:100%">Looks good · audit</div>
+          <div class="action-btn ghost" style="width:100%;margin-top:8px">Edit an input</div>
+        </div>
+        <nav class="tabs" data-active="home"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

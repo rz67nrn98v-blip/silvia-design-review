@@ -168,6 +168,7 @@ Investments home: stocks, trading — **not** Money debts.
 - First-run: who she is; prompts until accounts link.
 - Live: short, warm, early-30s EA voice. No emoji. No hype. No invented returns.
 - She can reference Home, Money, Pay, Decide, and Portfolio context.
+- **Core chips:** “Can I afford X?” (spendable + buffer) and “Why didn’t X pay?” (autopay / held / fail). See Core v1 · Ask plan chips. Shell: `ask-core.html`.
 
 
 ## Portfolio discovery (shipped in shell)
@@ -223,6 +224,21 @@ Investments home: stocks, trading — **not** Money debts.
 - Edit one rule (buffer floor / bill autopay / flexible allocation); show spendable + bucket impact; confirm.
 - **Core household only** — not investing Autopilot rebalance.
 - Shell: `plan.html`, `plan-edit.html`. Decide path: `decide-plan.html` (conflict / break-plan).
+
+### First-run onboarding (Core)
+Sequence from `CORE-PLAN.md`: connect (or manual income + bill list) → audit snapshot → propose plan (spendable + Bills/Buffer/Flexible + autopay + buffer floor) → **one** human confirm → she runs.
+
+- Empty until income **or** expenses land — never invent numbers.
+- Both paths visible on start: link accounts **or** enter manually.
+- Progressive / editorial — not a 12-step wizard.
+- Shells: `onboard-connect.html`, `onboard-income-expenses.html`, `onboard-audit.html`, `onboard-plan-propose.html`.
+- **Plan-confirm Decide:** `decide-plan-confirm.html` — night / Needs-you. Options: Confirm plan & run · Adjust a rule · Not now. The one human gate before autopilot; not per-bill confirms. Appears as a Core exception type alongside bill / audit / plan break.
+
+### Ask · Core plan chips
+- Affordance chips grounded in the live plan (structure only — no advice theater):
+  - **Can I afford X?** → answer against spendable + buffer floor; excess opens Decide rather than dipping reserves.
+  - **Why didn’t X pay?** → held / fail / not-in-plan explanation tied to autopay rules.
+- Feels like OS assistant for household money life. Shell: `ask-core.html` (empty + live threads). Existing `ask.html` remains general Ask chrome.
 
 ### Decide exceptions (Core)
 - Primary Needs you: bill / audit / plan exceptions — not Trading.

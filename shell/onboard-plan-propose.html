@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Core · Onboard · Plan propose</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Core · First-run · Propose</div>
+    <h1>Proposed plan — waiting on one confirm.</h1>
+    <p>Spendable, Bills / Buffer / Flexible, autopay set, buffer floor. She does not run until the human confirms once. Not per-bill confirms.</p>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="col-label">A · Draft empty</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            First run
+          </div>
+          <div class="eyebrow">Proposed plan</div>
+          <h1 class="hero">Nothing to propose.</h1>
+          <p class="lede empty">After income and expenses, she drafts spendable, buckets, and autopay here.</p>
+          <div class="card empty">
+            <div class="k">Spendable</div>
+            <h2 class="num empty-num">—</h2>
+            <p>Waiting on inputs and audit.</p>
+          </div>
+          <div class="list-card empty">
+            <div class="list-head">Buckets</div>
+            <div class="list-row"><span>Bills</span><span class="muted">—</span></div>
+            <div class="list-row"><span>Buffer</span><span class="muted">—</span></div>
+            <div class="list-row"><span>Flexible</span><span class="muted">—</span></div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="home"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">B · Proposed · needs confirm</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            First run
+          </div>
+          <div class="app-bar" style="margin-bottom:12px">
+            <span class="eyebrow" style="margin:0">Proposed plan</span>
+            <span class="tier">Core</span>
+          </div>
+          <h1 class="hero">Here’s Anthony’s plan.</h1>
+          <p class="lede">Built from income and expenses. Confirm once — then she auto-pays inside these rules.</p>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Income</div><div class="v">$3,840</div><div class="s">Net · biweekly</div></div>
+            <div class="stat"><div class="k">Expenses</div><div class="v">$2,679</div><div class="s">This cycle</div></div>
+          </div>
+
+          <div class="card spend">
+            <div class="k">Spendable this week</div>
+            <h2 class="num">$496</h2>
+            <p>After bills and buffer floor. Money that can leave without breaking the plan.</p>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Buckets</div>
+            <p class="section-note">Core set</p>
+            <div class="list-row"><span>Bills</span><span class="pill">$2,679</span></div>
+            <div class="list-row"><span>Buffer</span><span class="pill">$920</span></div>
+            <div class="list-row"><span>Flexible</span><span class="pill">$496</span></div>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Autopay set</div>
+            <p class="section-note">From checking · on by default for fixed bills</p>
+            <div class="list-row"><span>Mortgage</span><span class="pill forest">Autopay on</span></div>
+            <div class="list-row"><span>Auto loan</span><span class="pill forest">Autopay on</span></div>
+            <div class="list-row"><span>Internet</span><span class="pill forest">Autopay on</span></div>
+            <div class="list-row"><span>Sapphire</span><span class="pill">Min · confirm</span></div>
+            <div class="list-row"><span>Electric</span><span class="pill forest">Autopay on</span></div>
+          </div>
+
+          <div class="card">
+            <div class="k">Guardrail</div>
+            <h2>Buffer floor $920.</h2>
+            <p>Two weeks of essentials. She never drops below without a Decide. Never miss a priority bill.</p>
+            <span class="badge quiet">Open default</span>
+          </div>
+
+          <div class="card night">
+            <div class="k">Waiting on you</div>
+            <h2>One confirm to run.</h2>
+            <p>Not per-bill. After this, Decide only on exceptions.</p>
+            <span class="badge">Open · Decide</span>
+          </div>
+
+          <div class="action-btn primary" style="width:100%">Review &amp; confirm</div>
+        </div>
+        <nav class="tabs" data-active="home"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>
