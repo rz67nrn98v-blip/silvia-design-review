@@ -14,12 +14,12 @@
   <div class="meta">
     <div class="tag">Silvia · Core · Bill detail</div>
     <h1>One bill, fully framed.</h1>
-    <p>Amount, due, autopay, plan impact. CTA only when a human is needed.</p>
+    <p>Amount, due, autopay On / Off / Confirm toggle, plan impact. CTA only when a human is needed.</p>
   </div>
 
   <div class="row">
     <div class="col">
-      <div class="col-label">A · Autopay quiet</div>
+      <div class="col-label">A · Autopay On</div>
       <div class="device">
         <div class="notch"></div>
         <div class="status-bar"><span>9:41</span><span>5G</span></div>
@@ -41,6 +41,15 @@
             <div class="stat"><div class="k">Due</div><div class="v">Sep 28</div><div class="s">In 4 days</div></div>
             <div class="stat"><div class="k">Autopay</div><div class="v">On</div><div class="s">From checking</div></div>
             <div class="stat"><div class="k">Plan</div><div class="v">Reserved</div><div class="s">Inside spendable</div></div>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-label">
+              <span class="k">Autopay</span>
+              <span class="v">On</span>
+              <span class="s">Pays from checking on due date</span>
+            </div>
+            <div class="toggle on" aria-label="Autopay on"></div>
           </div>
 
           <div class="card">
@@ -86,6 +95,15 @@
             <div class="stat"><div class="k">Plan hit</div><div class="v">+$98</div><div class="s">vs reserve</div></div>
           </div>
 
+          <div class="toggle-row">
+            <div class="toggle-label">
+              <span class="k">Autopay</span>
+              <span class="v">Held</span>
+              <span class="s">Paused until you decide</span>
+            </div>
+            <div class="toggle confirm" aria-label="Autopay held"></div>
+          </div>
+
           <div class="card night">
             <div class="k">Needs you</div>
             <h2>Approve $312 or pause.</h2>
@@ -108,6 +126,61 @@
           </div>
 
           <div class="action-btn primary" style="width:100%">Approve $312</div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">C · Autopay off · Confirm</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Bills
+          </div>
+          <div class="detail-type">Bill · Credit card</div>
+          <h1 class="detail-title">Sapphire</h1>
+          <p class="detail-sub">Variable statement. Autopay off — she asks before it leaves.</p>
+
+          <div style="display:flex;justify-content:flex-end;margin:-8px 0 12px">
+            <span class="tier">Core</span>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Amount</div><div class="v">$240</div><div class="s">Minimum due</div></div>
+            <div class="stat"><div class="k">Due</div><div class="v">Sep 24</div><div class="s">Today</div></div>
+            <div class="stat"><div class="k">Autopay</div><div class="v">Off</div><div class="s">Confirm each</div></div>
+            <div class="stat"><div class="k">Plan</div><div class="v">Reserved</div><div class="s">Min in bills</div></div>
+          </div>
+
+          <div class="toggle-row">
+            <div class="toggle-label">
+              <span class="k">Autopay</span>
+              <span class="v">Off · confirm</span>
+              <span class="s">High-variance · you approve each draft</span>
+            </div>
+            <div class="toggle" aria-label="Autopay off"></div>
+          </div>
+
+          <div class="card">
+            <div class="k">What Silvia will do</div>
+            <h2>Hold $240 · ask before pay.</h2>
+            <p>Minimum reserved from checking. Statement pay-in-full stays an explicit plan rule — not default.</p>
+            <span class="badge quiet">Waiting confirm</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Toggle options</div>
+            <div class="list-row tappable"><span>Turn autopay on · minimum</span><span class="arrow">›</span></div>
+            <div class="list-row tappable"><span>Confirm &amp; pay $240 now</span><span class="arrow">›</span></div>
+            <div class="list-row tappable"><span>Pay statement balance · plan rule</span><span class="arrow">›</span></div>
+          </div>
+
+          <div class="action-btn primary" style="width:100%">Confirm &amp; pay $240</div>
         </div>
         <nav class="tabs" data-active="money"></nav>
         <div class="home-indicator"></div>
