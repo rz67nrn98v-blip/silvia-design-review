@@ -188,3 +188,45 @@ Investments home: stocks, trading — **not** Money debts.
 - Flows: Send / Request compose → **Confirm** → **Pending** or **Failed** detail → History.
 - Money moves from **spendable inside plan** — never bills or debt reserves without a Decide.
 - Failed: restore spendable; offer retry on same or alternate rail.
+
+
+## Core v1 lock (active)
+
+**Core is the only v1 focus.** Household finances: bills, audit, plan build/maintain, life money ops taken care of.
+
+**Tabs in Core product story:** Home · Money · Pay · Decide · Ask.  
+(Portfolio remains in shell for next-tier review — do not deepen Trading / Misfits / investment Autopilot in Core packs.)
+
+**Tier chip on Core screens:** label **Core** (not Autopilot).
+
+### Bills (Money)
+- Hub: Upcoming / Paid recently / Overdue. Status pills: Autopay on · Reserved · Needs you.
+- From spendable inside the plan. Pay is for people; bills live under Money.
+- Detail: amount, due, autopay, plan impact, what Silvia will do / did. CTA only if human needed.
+- Shell: `money-bills.html`, `money-bill-detail.html`. Decide path: `decide-bill.html`.
+
+### Audit (Money)
+- Summary of covered vs gaps (subscriptions, missing autopay, duplicates, insurance). Feels like she already looked — not a spreadsheet.
+- Finding detail → Approve / Not now → Decide if human required.
+- Shell: `money-audit.html`, `money-audit-finding.html`. Decide path: `decide-audit.html`.
+
+### Plan (Money / Home framing)
+- Overview: spendable + rules she follows (bills reserved, debts scheduled, retirement contribution).
+- **Core household only** — not investing Autopilot rebalance.
+- Edit one rule/target; show plan impact; confirm.
+- Shell: `plan.html`, `plan-edit.html`. Decide path: `decide-plan.html` (conflict / break-plan).
+
+### Decide exceptions (Core)
+- Primary Needs you: bill / audit / plan exceptions — not Trading.
+- Types: bill failed or amount jump; audit gap; plan conflict / break-plan request.
+- Night card pattern. Car replacement may remain as a Waiting household example.
+
+### Taken care of
+- Quiet proof card (bills paid, paycheck routed) — not a noisy feed. Optional on Home / Plan.
+
+### Next tier (not v1 deepen)
+- Portfolio discovery, Trading, Misfits, investment Autopilot — shipped shells stay for review but are out of Core v1 scope.
+
+### Pay depth
+- **Approved and locked.** Do not edit pay*.html or Pay shots in Core packs.
+

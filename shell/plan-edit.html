@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Plan · Edit rule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Core · Plan edit</div>
+    <h1>Adjust one rule.</h1>
+    <p>Raise a reserve or change payoff pace. Show plan impact. Confirm before it sticks.</p>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="col-label">Edit · Utilities reserve</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Plan
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div class="detail-type" style="margin:0">Plan rule</div>
+            <span class="tier">Core</span>
+          </div>
+          <h1 class="detail-title">Utilities reserve</h1>
+          <p class="detail-sub">Electric jumped. Raise the reserve so next cycle doesn’t need you.</p>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Current</div><div class="v">$214</div><div class="s">/ paycheck</div></div>
+            <div class="stat"><div class="k">Proposed</div><div class="v">$280</div><div class="s">/ paycheck</div></div>
+            <div class="stat"><div class="k">Spendable</div><div class="v">$496 → $430</div><div class="s">This week</div></div>
+            <div class="stat"><div class="k">Bills reserved</div><div class="v">$839 → $905</div><div class="s">Total</div></div>
+          </div>
+
+          <div class="card">
+            <div class="k">Plan impact</div>
+            <h2>Spendable drops $66.</h2>
+            <p>Retirement and debts unchanged. I’ll use $280 as the new utilities floor starting next paycheck.</p>
+            <span class="badge quiet">Preview · not saved</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Also considered</div>
+            <div class="list-row"><span>Keep $214 · decide each spike</span><span class="muted">Default</span></div>
+            <div class="list-row"><span>Raise to $250</span><span class="muted">Softer</span></div>
+            <div class="list-row tappable"><span>Raise to $280 · recommended</span><span class="pill forest">Best</span></div>
+          </div>
+
+          <div class="action-btn primary" style="width:100%">Confirm $280 reserve</div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">Edit · Card payoff pace</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Plan
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div class="detail-type" style="margin:0">Plan rule</div>
+            <span class="tier">Core</span>
+          </div>
+          <h1 class="detail-title">Sapphire payoff pace</h1>
+          <p class="detail-sub">Today: minimum + buffer. You can push harder without touching retirement.</p>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Current</div><div class="v">$240</div><div class="s">Min+</div></div>
+            <div class="stat"><div class="k">Proposed</div><div class="v">$400</div><div class="s">Faster</div></div>
+            <div class="stat"><div class="k">Spendable</div><div class="v">−$160</div><div class="s">Per paycheck</div></div>
+            <div class="stat"><div class="k">Clear in</div><div class="v">~4 mo</div><div class="s">Was ~8</div></div>
+          </div>
+
+          <div class="card">
+            <div class="k">Plan impact</div>
+            <h2>Retirement stays $410.</h2>
+            <p>Extra $160 comes from spendable only. I’ll confirm before the next draft.</p>
+            <span class="badge quiet">Preview · not saved</span>
+          </div>
+
+          <div class="action-btn primary" style="width:100%">Confirm $400 pace</div>
+          <div class="action-btn ghost" style="width:100%;margin-top:8px">Keep current</div>
+        </div>
+        <nav class="tabs" data-active="money"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>

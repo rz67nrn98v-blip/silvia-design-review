@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silvia — Decide · Plan conflict</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="shell.css" />
+</head>
+<body>
+  <div class="meta">
+    <div class="tag">Silvia · Core · Decide · Plan</div>
+    <h1>Plan conflict.</h1>
+    <p>Something asked would break a rule she follows. She shows the hit and options — you choose.</p>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="col-label">Decision · Break-plan request</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>6:14</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Decide
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div class="detail-type" style="margin:0">Plan exception</div>
+            <span class="tier">Core</span>
+          </div>
+          <h1 class="detail-title">This would dip reserves.</h1>
+          <p class="detail-sub">You asked to send $600 on Pay. Spendable is $496. Pulling the rest touches the bills reserve.</p>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="k">Requested</div><div class="v">$600</div><div class="s">Pay · send</div></div>
+            <div class="stat"><div class="k">Spendable</div><div class="v">$496</div><div class="s">This week</div></div>
+            <div class="stat"><div class="k">Short</div><div class="v debt">$104</div><div class="s">From reserve?</div></div>
+            <div class="stat"><div class="k">Rule</div><div class="v">Bills</div><div class="s">Protected</div></div>
+          </div>
+
+          <div class="card night">
+            <div class="k">Needs you · Now</div>
+            <h2>Break the plan this once?</h2>
+            <p>I can send $496 now and wait on the rest — or dip the utilities reserve and refill next paycheck.</p>
+            <span class="badge">Open</span>
+          </div>
+
+          <div class="card">
+            <div class="k">Silvia recommends</div>
+            <h2>Send $496 · hold the rest.</h2>
+            <p>Keeps bills intact. Or confirm a one-time break and I’ll log it.</p>
+            <span class="badge quiet">Prepared · waiting on you</span>
+          </div>
+
+          <div class="list-card">
+            <div class="list-head">Your options</div>
+            <div class="list-row tappable"><span>Send $496 · keep plan</span><span class="arrow">›</span></div>
+            <div class="list-row tappable"><span>Break once · dip reserve $104</span><span class="arrow">›</span></div>
+            <div class="list-row tappable"><span>Cancel the send</span><span class="arrow">›</span></div>
+          </div>
+
+          <div class="action-btn primary" style="width:100%">Send $496 · keep plan</div>
+        </div>
+        <nav class="tabs" data-active="decide"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <script src="tabs.js"></script>
+</body>
+</html>
