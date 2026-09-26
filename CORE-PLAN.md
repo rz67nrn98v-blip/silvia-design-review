@@ -6,7 +6,7 @@
 **Eng build truth (leftover-first):** [`SILVIA-CORE-ENGINE.md`](./SILVIA-CORE-ENGINE.md) — domain models, compiler, living plan, fixtures A–I, acceptance. If this short file and the engine conflict on math or change rules, **the engine wins**. Product locks below still win on cards / buffer / catch-up / no jargon / no invent cash.
 
 **Adopted:** Sep 25 2026 (leftover-first).  
-**Copy locks (Sep 25 2026):** Never say **floor** in user-facing Core copy. Never say Core **ran overnight** / while you slept — overnight framing is top-tier Autopilot only; Core is continuous ops when they check in. Never name a demo person (“Anthony”) in UI — generic you / your plan / Good morning; personalize later per household.
+**Copy locks (Sep 25 2026):** Never say **floor** in user-facing Core copy. Never say Core **ran overnight** / while you slept — overnight framing is top-tier Autopilot only; Core is continuous ops when they check in. Never name a demo person in UI — generic you / your plan / Good morning; personalize later per household.
 
 **Revert tip:** Design git `a6e4324` + `/workspace/silvia-core-revert-2026-09-25/` (CoS box).
 
