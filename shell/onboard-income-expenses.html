@@ -9,6 +9,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../tokens/tokens.css" />
   <link rel="stylesheet" href="shell.css" />
+  <style>
+    .freq-opts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .freq-opt {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink-secondary);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  </style>
 </head>
 <body>
   <div class="meta">
@@ -42,11 +62,20 @@
               <div class="v placeholder">Amount</div>
             </div>
             <div class="field">
-              <div class="k">Pay schedule</div>
-              <div class="v placeholder">Biweekly · monthly · …</div>
+              <div class="k">How often</div>
+              <div class="freq-opts">
+                <span class="freq-opt">weekly</span>
+                <span class="freq-opt">biweekly</span>
+                <span class="freq-opt">twice a month</span>
+                <span class="freq-opt">monthly</span>
+              </div>
             </div>
             <div class="field">
               <div class="k">Next deposit</div>
+              <div class="v placeholder">Date</div>
+            </div>
+            <div class="field">
+              <div class="k">Second deposit</div>
               <div class="v placeholder">Date</div>
             </div>
           </div>
@@ -95,8 +124,9 @@
           <div class="list-card empty">
             <div class="list-head">Income</div>
             <div class="list-row"><span class="muted">No income yet</span></div>
-            <div class="list-row"><span>Pay schedule</span><span class="muted">Unset</span></div>
+            <div class="list-row"><span>How often</span><span class="muted">Unset</span></div>
             <div class="list-row"><span>Next deposit</span><span class="muted">Unset</span></div>
+            <div class="list-row"><span>Second deposit</span><span class="muted">Unset</span></div>
           </div>
 
           <div class="list-card empty">
