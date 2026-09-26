@@ -216,12 +216,12 @@ Investments home: stocks, trading — **not** Money debts.
 
 **Core job (one-liner):** Bread-and-butter auto bill pay + planning/budgeting — on track, bills on time, manage money. Foundation for wealth. **Not** investing Autopilot.
 
-**Model (leftover-first):** income + bills → leftover → optional commitments (card extra if hasDebt; buffer if opted in) → **spendable headline** (buckets explain it) + autopay → she runs it; **Decide** only on guardrail breaks (priority bill miss risk, buffer below floor, pay fail, audit gap).
+**Model (leftover-first):** income + bills → leftover → optional commitments (card extra if hasDebt; buffer if opted in) → **spendable headline** (buckets explain it) + autopay → she runs it; **Decide** only on guardrail breaks (priority bill miss risk, buffer goal slip if opted in, pay fail, audit gap).
 
 - Empty until income **or** expenses land — never invent numbers.
 - Live overview: leftover line, **spendable large**, then buckets that explain it (Bills · Buffer per payday if opted in · Flexible · Debt extra only if hasDebt), autopay/bill schedule, quiet taken-care-of. Retirement is not a Core bucket row. No debt = Core-complete.
 - **Locked — cards:** never quiet minimum. Every cycle she asks to pay more; recommends an affordable amount over min toward debt. Options: her amount (primary) · own · statement · minimum this cycle only (explicit, discouraged). Shells: `plan-edit.html` (Sapphire pace), `money-card.html`, `money-bill-detail.html`, `decide-card-paymore.html`.
-- **Locked — buffer:** ~2 weeks essentials = **opt-in goal**, not an assumed cash floor. Decline → $0 / no floor / no buffer guardrail. Accept → goal active; guardrail only once active and funded. Smaller starter OK. Shells: `plan.html`, `plan-edit.html`, `onboard-plan-propose.html`, `decide-buffer.html` (breach only if goal active).
+- **Locked — buffer:** ~2 weeks essentials = **opt-in goal**, not assumed cash. Decline → $0 goal / no buffer / no buffer guardrail. Accept → goal active; guardrail only once active and funded. Smaller starter OK. Shells: `plan.html`, `plan-edit.html`, `onboard-plan-propose.html`, `decide-buffer.html` (breach only if goal active).
 - **Locked — catch-up:** if behind on bills, propose a path to get **current** (essentials first, sequence, temporary Flexible cuts, partials/arrangements) from real income + spendable + due amounts — never invent money; not overdue list alone. Shells: `money-bills.html`, `money-audit-finding.html`, `decide-catchup.html`.
 - Edit one rule (buffer goal / card pay-more pace / bill autopay / flexible); show spendable + bucket impact; confirm.
 - **Core household only** — not investing Autopilot rebalance.

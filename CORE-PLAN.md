@@ -21,7 +21,7 @@ Income + bills due until next payday → **leftover** → optional commitments (
 ## Leftover-first (adopted)
 
 1. Cover essentials this cycle (ranks 1–7, including card/loan **minimums** — not debt extra).  
-2. Show **leftover** honestly: income this cycle − essentials. Do not hide a skim or silent survival-floor bucket. Cash-on-hand is timing, not extra income into leftover.  
+2. Show **leftover** honestly: income this cycle − essentials. Do not hide a skim or silent survival bucket. Cash-on-hand is timing, not extra income into leftover.  
 3. Commitments they accept (not auto-applied):
    - **Card extra** — only if `hasDebt`; four options; her recommend from leftover (~25% starting propose in the engine).  
    - **Buffer per payday** — only if they opt in.  
