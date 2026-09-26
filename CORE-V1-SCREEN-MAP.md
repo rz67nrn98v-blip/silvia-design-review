@@ -8,7 +8,9 @@
 
 **Job:** Get finances on track, bills on time, manage money — start of wealth. Actively managed autopay + planning/budgeting.
 
-**Plan model (one line):** income + expenses → spendable + buckets (Bills · Buffer · Flexible) + autopay rules → Decide on exceptions only. Never invent numbers.
+**Plan model (one line):** income + bills until next payday → **leftover** → optional commitments (card extra if debt; buffer if opted in) → **spendable** (headline) + autopay → Decide on exceptions. Never invent numbers.  
+**Engine:** [`SILVIA-CORE-ENGINE.md`](./SILVIA-CORE-ENGINE.md) · short locks: [`CORE-PLAN.md`](./CORE-PLAN.md)  
+**Adopted leftover-first:** Sep 25 2026 · revert Design tip `a6e4324`
 
 ---
 
@@ -23,7 +25,7 @@ Build and ship in this sequence. Each row is a static Design shell Eng can open 
 | 0.1 | [`shell/onboard-connect.html`](shell/onboard-connect.html) | Link accounts **or** enter income/expenses manually |
 | 0.2 | [`shell/onboard-income-expenses.html`](shell/onboard-income-expenses.html) | Capture / review income + expenses (empty until both exist) |
 | 0.3 | [`shell/onboard-audit.html`](shell/onboard-audit.html) | First-run covered vs gaps before plan propose |
-| 0.4 | [`shell/onboard-plan-propose.html`](shell/onboard-plan-propose.html) | Proposed plan + **card pay-more ask** + **buffer endeavor ask** (accept / not-now) |
+| 0.4 | [`shell/onboard-plan-propose.html`](shell/onboard-plan-propose.html) | Leftover first → spendable large; **card ask only if hasDebt**; **buffer** ask; no-debt variant |
 | 0.5 | [`shell/decide-plan-confirm.html`](shell/decide-plan-confirm.html) | **One human gate:** Confirm & run · Adjust a rule · Not now. Then she runs. |
 
 ### 1 · Money — bills, audit, plan
@@ -93,7 +95,7 @@ Legacy household example (optional, not Core money-ops): [`decide-detail.html`](
 onboard-connect
   → onboard-income-expenses
   → onboard-audit
-  → onboard-plan-propose   ← card pay-more + buffer goal asks
+  → onboard-plan-propose   ← leftover / spendable; card if debt; buffer ask
   → decide-plan-confirm   ← one confirm
   → decide-catchup when behind; decide-card-paymore each card cycle
   → home-handled + money/plan run quietly

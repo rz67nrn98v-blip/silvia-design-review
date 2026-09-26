@@ -3,11 +3,30 @@
 **Not financial advice.** Product rules for how Core builds and runs a household money plan.  
 **Job:** Get people on track, pay bills on time, manage money. Foundation for wealth creation. Later tiers add investing / access / full Autopilot.
 
+**Eng build truth (leftover-first):** [`SILVIA-CORE-ENGINE.md`](./SILVIA-CORE-ENGINE.md) — domain models, compiler, living plan, fixtures A–I, acceptance. If this short file and the engine conflict on math or change rules, **the engine wins**. Product locks below still win on cards / buffer / catch-up / no jargon / no invent cash.
+
+**Adopted:** Sep 25 2026 (leftover-first).  
+**Revert tip:** Design git `a6e4324` + `/workspace/silvia-core-revert-2026-09-25/` (CoS box).
+
 ---
 
 ## One sentence
 
-Silvia learns **income** and **expenses**, builds a **plan**, **auto-pays bills inside that plan**, and only pulls the human when something breaks the rules.
+Income + bills due until next payday → **leftover** → optional commitments (card extra only if they have debt; buffer only if they opt in) → **spendable** is the headline → she auto-pays essentials → the plan recompiles when life changes.
+
+---
+
+## Leftover-first (adopted)
+
+1. Cover essentials this cycle (ranks 1–7, including card/loan **minimums** — not debt extra).  
+2. Show **leftover** honestly: income this cycle − essentials. Do not hide a skim or silent survival-floor bucket. Cash-on-hand is timing, not extra income into leftover.  
+3. Commitments they accept (not auto-applied):
+   - **Card extra** — only if `hasDebt`; four options; her recommend from leftover (~25% starting propose in the engine).  
+   - **Buffer per payday** — only if they opt in.  
+4. **Spendable** = leftover − accepted debt extra − accepted buffer contribution. Lead Home, Plan, Pay, Ask with this number.  
+5. **No debt is Core-complete.** Skip card ask, hide Debt extra, hide card Ask chip.
+
+Confirm is not a freeze. First-run confirm means **start running**. Quiet / Ask / Hard stop when facts change — see engine §7A.
 
 ---
 
@@ -16,10 +35,10 @@ Silvia learns **income** and **expenses**, builds a **plan**, **auto-pays bills 
 | Input | How it arrives | Notes |
 |---|---|---|
 | **Income** | Linked payroll / deposits, or user-stated net pay + cadence | Net after tax preferred; if gross, label it |
-| **Recurring expenses** | Linked bills + subscriptions + detected debits | Each has amount, due window, priority |
-| **Accounts** | Checking / savings / cards | Spendable lives on checking (or designated) |
-| **Debts** | Cards, loans — balance, minimum due, due date, APR if known | Cards never treated as “minimum forever” |
-| **Goals (asked, not assumed)** | Buffer endeavor, debt payoff pace, “no overdraft” | Empty goals OK — she asks; she does not invent that people already have a buffer |
+| **Recurring expenses** | Linked bills + subscriptions + detected debits | Amount, due window, priority rank |
+| **Accounts** | Checking / savings / cards | Designated checking for autopay; spendable is a plan number |
+| **Debts** | Cards, loans — balance, minimum, due, APR if known | Optional. No card/loan = no card path |
+| **Goals (asked, not assumed)** | Buffer endeavor, debt payoff pace | Empty goals OK — she asks; she does not invent buffer cash |
 
 Without income **or** expenses, plan stays **empty / Waiting on you** — never invent numbers.
 
@@ -29,13 +48,9 @@ Without income **or** expenses, plan stays **empty / Waiting on you** — never 
 
 A living set of rules, not a spreadsheet screenshot:
 
-1. **Spendable** — money that can leave without breaking bills and chosen goals  
-2. **Bill schedule** — what gets paid, from where, by when (autopay on/off per bill)  
-3. **Buckets** — simple Core set only:  
-   - Bills  
-   - Buffer *(goal — only if they opted in)*  
-   - Flexible (day-to-day)  
-   - Debt extra *(for card/loan amounts above minimum)*  
+1. **Spendable** — headline: money that can leave without breaking the plan until next payday  
+2. **Bill schedule** — what gets paid, from where, by when (autopay on/off/held per bill)  
+3. **Buckets (explain spendable; do not bury it)** — Bills · Buffer goal *(if opted in)* · Flexible *(same dollars as spendable)* · Debt extra *(only if hasDebt)*  
 4. **Guardrails** — never miss a priority bill; never silently overdraft; never leave a card on minimum-only without asking
 
 ---
@@ -43,129 +58,92 @@ A living set of rules, not a spreadsheet screenshot:
 ## Build sequence (first-run)
 
 1. Connect accounts (or manual income + bill list)  
-2. **Audit** — what’s covered, what’s missing, what’s late  
-3. Propose plan: spendable + bill autopay set  
-4. **Ask two Core questions** (Decide / onboarding — not buried):  
-   - **Cards:** Pay more than minimum? Silvia recommends an affordable amount over minimum toward debt. Options: her amount · pick your own · statement balance · minimum this cycle only (discouraged, must be explicit)  
-   - **Buffer:** Want to build toward ~2 weeks of essential bills? It’s a **goal to endeavor on**, not something we assume they already have. Options: start the goal · smaller starter goal · not now  
-5. Human confirms plan once → she runs it  
-6. Home shows quiet “taken care of”; Decide only on exceptions
+2. **Audit** — covered / missing / late  
+3. Propose: leftover → spendable path + autopay set  
+4. **Asks:**  
+   - **Cards (only if hasDebt):** Pay more than minimum? Her amount · own · statement · minimum this cycle only (explicit, discouraged)  
+   - **Buffer (always):** Endeavor on ~2 weeks essentials? Full · starter · not now  
+5. Human confirms once → she runs  
+6. If behind: catch-up Decide before or with confirm  
+7. Home quiet “taken care of”; Decide only on exceptions
+
+---
+
+## Locked rules (do not break)
+
+1. **Credit cards — never quiet minimum-only.** Every cycle she asks to pay more and recommends an affordable amount over minimum from leftover. Options: her amount · own amount · statement · **minimum this cycle only** (expires; she asks again).  
+2. **Buffer — not assumed.** ~2 weeks of essential bills is a goal. Decline = $0 floor. Stored per-payday commitment only if they accept.  
+3. **Behind — catch-up path.** Propose how to get current from real money. If income cannot cover essentials after cuts, say so.  
+4. **Autopay** for fixed essentials inside the plan. She does not silently overdraft.  
+5. **UI copy:** plain language only. Never “Core exception types” in the product.  
+6. **Never invent numbers or cash.**  
+7. **Pay tab** is people rails (Cash App / Zelle / Venmo) from spendable — not bill pay.  
+8. **The plan can change.** Live is not locked. Recompile when facts change. Quiet vs Ask vs Hard stop — engine §7A.  
+9. **Core is the base of the app.** New features stack on Core. Do not center v1 on Portfolio, Trading, Misfits, or Autopilot investing.  
+10. **Spendable stays on screen.** Home, Plan, Pay, Ask.  
+11. **Debt is optional.** No card and no loan = no card ask, no Debt extra, no payoff copy. Still Core-complete.
 
 ---
 
 ## Credit cards (locked)
 
-**Nobody should default to minimum-only.** Minimum alone is a trap path.
-
-- Every card payment cycle: she **asks** whether to pay more than the minimum.  
-- She **recommends** an amount over the minimum they can afford from spendable (after essential bills), aimed at getting out of debt — not an invented return, just a concrete payment.  
-- User can: accept her amount · set their own · pay statement balance · choose minimum **this cycle only** (must be an explicit choice, never the quiet default).  
-- Autopay rule on the card stores the chosen pace (extra fixed $, % of spendable, or statement).  
-- Plan edit and Ask (“What should I pay on the card?”) use the same logic.
+- Skip the entire path when the household has no debt that takes extra.  
+- Every statement cycle (and first propose): four options; her amount is a propose from leftover, not auto-applied until they choose a Pace.  
+- `unset` is the default for a new card — **not** minimum.  
+- No payoff-date or interest-saved claim without a real APR and estimate language.
 
 ---
 
 ## Buffer (locked)
 
-**Do not assume people have 2 weeks of extra cash for bills.**
-
-- ~2 weeks of essential bills is a **goal**, not a pre-filled floor they already meet.  
-- First-run / plan propose: **ask** if they want to endeavor on building that buffer (or a smaller starter).  
-- If they decline: plan runs with **no buffer floor** (or $0 goal) — bills + debt-extra rules still apply; she does not invent buffer cash.  
-- If they accept: buffer becomes a funded goal; guardrail “don’t break buffer without Decide” applies only once the goal is active and funded.  
-- Home / Plan can show progress toward the buffer goal without shaming empty.
-
----
+- Ask: full ~2 weeks · starter ~1 week · not now.  
+- Accept → target + `bufferPerPayday` commitment (editable in Plan).  
+- Decline → $0, no buffer guardrail.  
+- Guardrail “don’t break buffer without Decide” only when goal **active and funded > 0**.
 
 ---
 
 ## Behind on bills / catch-up (locked)
 
-**If they’re behind, Silvia’s job is to get them current** — not only to list what’s overdue.
-
-1. **Audit the arrears** — which bills, how much past due, due next, shutoff/late-fee risk, essentials vs flexible.  
-2. **Propose a catch-up path** from real income + spendable (never invent cash):  
-   - Prioritize essentials (housing, utilities, transport, insurance, minimums that prevent default)  
-   - Sequence payments across this payday and the next  
-   - Temporarily cut Flexible / pause non-essentials  
-   - Apply any debt-extra / card pay-more only after essentials are protected  
-   - Where useful: partial payment now + scheduled remainder (Decide)  
-3. **One Decide** when tradeoffs need a human (which bill first, cut X vs Y, call creditor).  
-4. **Run the catch-up** — Home “taken care of” tracks progress toward current; Bills shows overdue → catching up → current.  
-5. Ask: “How do we get current?” uses the same path.
-
-If income cannot cover essentials even after cuts, she says that plainly and proposes the honest next step (which bills to protect, what to negotiate) — still a plan, not empty shame.
-
----
-
-## Catch-up / behind (locked)
-
-**If the household is behind on bills, she proposes a path to get current — not only a list of overdue.**
-
-- Detect overdue / past-due from linked bills and stated due amounts (real numbers only — never invent income or cash).  
-- **Catch-up plan:** prioritize essentials (housing, utilities, insurance, transport), sequence what to pay first with real spendable + next income, temporary Flexible cuts, and payment arrangements or partials where the bill allows.  
-- Surface on Bills (overdue), Audit findings, first-run audit when late items exist, and Ask (“How do we get current?”).  
-- Human choice on tradeoffs → **Decide** (`decide-catchup`): approve her sequence · adjust priorities · approve partials / arrangements · not now.  
-- She does not silently skip essentials or invent money to “fix” overdue.
+1. Audit arrears (real numbers only).  
+2. Propose a **sequence** across this payday and the next; pause debt extra while essentials are behind; cut flexible / pause rank 8–9.  
+3. One Decide on tradeoffs.  
+4. If income cannot cover rank 1–5 essentials even after cuts: say so plainly (`blocked` / honest shortfall) — still a plan.
 
 ---
 
 ## Autopay policy (Core)
 
-- **On by default** for fixed-amount essential bills (rent/mortgage, utilities, insurance, loan minimums, essential subscriptions).  
-- **Credit cards:** never quiet minimum — see Credit cards (locked).  
-- **Off / confirm** for variable or high-variance (medical; one-offs).  
-- Pay from **designated checking** only.  
-- If cash < bill (+ active buffer goal floor if any) → **Decide** (skip / pay partial / move money / delay) — she does not silently overdraft.  
-- Failed rail / returned payment → **Decide** + retry path.
-
-This is “actively managed auto bill pay”: she executes inside rules; she does not gamble the account.
+- **On** for fixed-amount essentials (rank ≤ 7) when checking exists and cash path is safe.  
+- **Cards:** amount = chosen Pace — never silent minimum.  
+- **Confirm / off** for variable or rank ≥ 8.  
+- Cash short → **held** + Decide. Failed rail → Decide + retry.  
+- Manual / no checking: plan may propose; autopay stays off until designated checking exists.
 
 ---
 
 ## Audit (continuous)
 
-On a cadence (daily quiet check + payday + bill-due window):
-
-- Bills upcoming / paid / overdue  
-- Income landed vs expected  
-- Spendable drift  
-- Subscriptions new or raised  
-- Card still on minimum-only without a recent “pay more” choice → prompt again  
-- Buffer goal progress (if opted in)
-
-Each finding: one issue → one proposed action → Decide if it needs a human.
+Daily quiet + payday + bill-due window: upcoming / paid / overdue, income landed, spendable drift, new debits, card pace expiry, buffer progress if opted in. One finding → one action → Decide if human needed.
 
 ---
 
-## Decide (Core exception types only)
+## Decide (Core catalog — internal names only)
 
-| Type | Example |
-|---|---|
-| Bill fail | Autopay bounced |
-| Audit gap | New bill detected, not in plan |
-| Plan break | Spendable would go negative / active buffer breach |
-| Pay fail | Person-to-person send failed |
-| Card pay-more | Each cycle: accept recommend / set amount / statement / minimum this cycle only |
-| Catch-up / behind | Approve sequenced path to get bills current |
-| Buffer goal | Opt in, change target, or pause the endeavor |
-
-No Trading / Misfits / rebalance decisions in Core.
+Plan confirm · Card pay-more · Catch-up · Bill fail/jump/held · Audit gap · Plan break · Buffer (only if goal active + funded).  
+No Trading / Misfits / rebalance in Core. Never show taxonomy jargon in UI.
 
 ---
 
 ## Pay tab (in Core)
 
-Send / request people (Cash App, Zelle, Venmo) **from spendable**, after essential bills (and active buffer rules) are safe. History lives here. Not a substitute for bill autopay.
+Send / request people from **spendable**, after essentials (and active buffer rules) are safe. Not a substitute for bill autopay.
 
 ---
 
 ## Out of Core v1
 
-- Portfolio browse / Trading / overnight invest Autopilot  
-- Misfits / alternatives  
-- Tax optimization, advice-labeled recommendations, invented returns  
-- Complex multi-account treasury
+Portfolio browse / Trading / overnight invest Autopilot · Misfits · tax optimization · invented returns · complex multi-account treasury.
 
 ---
 
@@ -173,21 +151,21 @@ Send / request people (Cash App, Zelle, Venmo) **from spendable**, after essenti
 
 | Surface | Job |
 |---|---|
-| Money · Bills / card detail | Schedule + autopay + **pay-more than minimum** |
-| Money · Audit | Gaps and findings |
-| Plan / Plan edit | Overview + buffer goal + card pace |
-| Onboarding / Decide | Card pay-more ask + buffer endeavor ask + catch-up when behind |
-| Home · handled | Quiet proof she ran the plan |
-| Home · Needs you / Decide | Exceptions + the two asks |
-| Ask | Afford X / Why didn’t X pay / What should I pay on the card / How do we get current |
-| Bills · overdue / Decide catch-up | Path to current — sequence, not list-only |
+| Onboard propose | Leftover first; spendable large; card ask **only if debt**; buffer ask; no-debt variant |
+| Home / Plan / Pay | Spendable headline |
+| Money · Bills / card detail | Schedule + autopay + pay-more (if debt) |
+| Plan edit | Buffer per payday + card four options (if debt); recompile, no second onboard |
+| Decide | Card / catch-up / bill held / plan break / buffer |
+| Ask | Afford · why didn’t pay · card *(hide if no debt)* · get current · what can I spend until next payday |
+| Eng | Models + compiler + Fixtures A–I before more surface invention — see engine |
 
 ---
 
-## Locked product choices (user · Sep 24 2026)
+## Locked product choices
 
-1. **Buffer:** ~2 weeks essential bills = **opt-in goal**, not an assumed default people already have.  
-2. **Credit cards:** never default to minimum-only; always ask to pay more; Silvia recommends an affordable amount over minimum toward debt.  
-3. **Behind on bills:** Silvia proposes a catch-up path to bring them **current** — prioritize, sequence, cut flexible spend, Decide on hard tradeoffs; never invent cash.  
-4. **First confirm:** one Plan confirm (including those asks), then autopilot; not a tap per every bill.  
-5. **Manual households:** allowed — income + bills typed if banks not linked yet.
+1. Buffer = opt-in goal (+ per-payday commitment when accepted).  
+2. Cards never quiet minimum-only; recommend from leftover.  
+3. Behind → catch-up sequence; never invent cash.  
+4. One Plan confirm, then autopilot; confirm ≠ freeze.  
+5. Manual households allowed.  
+6. Leftover-first; spendable is the headline; no debt is Core-complete.
