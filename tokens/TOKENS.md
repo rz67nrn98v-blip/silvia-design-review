@@ -57,7 +57,7 @@ One mark: folded S (film end card). Wordmark “Silvia” in display serif. No t
 
 Early-30s executive assistant. Warm, not bubbly. Slightly futuristic. Never robotic.  
 Line: *Every financial product gives people tools to manage their money. Silvia manages the tools.*  
-Demo household: Anthony. Concept, not live advice.
+No named demo person in UI. Concept copy uses you / your plan. Not live advice.
 
 
 ## Home surface rules (v0.2)

@@ -22,7 +22,7 @@ Do this, in order:
 
 Do not build Portfolio, Trading, Misfits, or Autopilot investing.  
 Do not invent cash, income, APR, payoff dates, or returns.  
-Do not ship Anthony demo numbers as empty states.  
+Do not ship demo-household numbers as empty states.  
 Do not use internal jargon in UI (“exception types”).  
 Voice: early-30s EA, short sentences, no emoji, no hype.
 
@@ -56,7 +56,7 @@ Later features (Managed book, Misfits access, Trading, Autopilot investing) **ad
 
 **Voice:** early-30s EA. Warm, not bubbly. Short sentences. No emoji. No hype. Plain language. Never “Core exception types” in UI.
 
-**Empty until use.** Demo household (Anthony) is concept only. Never ship those numbers as runtime defaults.
+**Empty until use.** No named demo person in product UI. Never ship fixture/demo numbers as runtime defaults.
 
 After reading this file, implement:
 
@@ -280,7 +280,7 @@ Numbers that do **not** survive a recompile: leftover, spendable, bucket dollars
 
 ### 4.7 Household snapshot (runtime)
 
-Never seed with Anthony. Empty snapshot:
+Never seed with a named demo person. Empty snapshot:
 
 ```
 incomeStreams = []
@@ -1173,7 +1173,7 @@ Portfolio tab may stay a labeled shell. Do not implement Managed / Misfits / Tra
 
 A build is Core-correct when all of these are true:
 
-- [ ] Fresh install shows no Anthony numbers  
+- [ ] Fresh install shows no demo-person name or demo numbers  
 - [ ] Plan refuses to compute without income and at least one bill  
 - [ ] Card row never stores minimum as the quiet default  
 - [ ] Buffer decline → $0 goal, no guardrail  

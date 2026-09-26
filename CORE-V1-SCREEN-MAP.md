@@ -3,7 +3,7 @@
 **Status:** Design surface sufficient for Eng. Do not invent more Core screens unless Eng/CoS asks.  
 **Product rules:** [`CORE-PLAN.md`](./CORE-PLAN.md)  
 **Review index:** [`index.html`](./index.html) · shells under `shell/`  
-**Demo household:** Anthony · **Tier chip:** Core  
+**Review chrome:** generic “you / your plan” — no named demo person · **Tier chip:** Core  
 **Out of Core v1:** Portfolio / Trading / Misfits / investing Autopilot (`shell/tier-*`, `shell/portfolio-*`) — look-only, labeled not-v1.
 
 **Job:** Get finances on track, bills on time, manage money — start of wealth. Actively managed autopay + planning/budgeting.
