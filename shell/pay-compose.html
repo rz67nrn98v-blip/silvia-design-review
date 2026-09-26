@@ -14,7 +14,7 @@
   <div class="meta">
     <div class="tag">Silvia · Pay · Send / Request</div>
     <h1>Send &amp; request inside Silvia.</h1>
-    <p>Cash App, Zelle, Venmo as rails — not destinations. Empty until linked. Live: choose rail, person, amount; recent activity stays on Pay.</p>
+    <p>Cash App, Zelle, Venmo. Empty until linked. Live: amount → payment app → person; recent activity stays on Pay.</p>
   </div>
 
   <div class="row">
@@ -30,14 +30,14 @@
             Pay
           </div>
           <div class="detail-type">Pay</div>
-          <h1 class="detail-title">No rails linked.</h1>
-          <p class="detail-sub">Connect Cash App, Zelle, or Venmo to send and request without leaving Silvia.</p>
+          <h1 class="detail-title">No payment apps linked.</h1>
+          <p class="detail-sub">Connect Cash App, Zelle, or Venmo.</p>
           <div class="action-row">
             <div class="action-btn ghost">Send</div>
             <div class="action-btn ghost">Request</div>
           </div>
           <div class="list-card empty">
-            <div class="list-head">Available rails</div>
+            <div class="list-head">Payment apps</div>
             <div class="list-row"><span>Cash App</span><span class="muted">Not linked</span></div>
             <div class="list-row"><span>Zelle</span><span class="muted">Not linked</span></div>
             <div class="list-row"><span>Venmo</span><span class="muted">Not linked</span></div>
@@ -61,7 +61,7 @@
           </div>
           <div class="detail-type">Pay</div>
           <h1 class="detail-title">Send money.</h1>
-          <p class="detail-sub">From spendable. Silvia picks a rail; you can change it.</p>
+          <p class="detail-sub">From spendable only.</p>
 
           <div class="seg">
             <div class="opt on">Send</div>
@@ -70,8 +70,16 @@
 
           <div class="field">
             <div class="k">Amount</div>
-            <div class="v amount">$48</div>
+            <div class="v amount" contenteditable="true" inputmode="decimal">$48</div>
           </div>
+
+          <div class="k" style="margin: 4px 0 8px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-tertiary);">Payment app</div>
+          <div style="margin-bottom: 14px;">
+            <span class="rail-chip off">Cash App</span>
+            <span class="rail-chip off">Zelle</span>
+            <span class="rail-chip">Venmo</span>
+          </div>
+
           <div class="field">
             <div class="k">To</div>
             <div class="v">Maya Chen · @maya.c</div>
@@ -81,18 +89,11 @@
             <div class="v">Dinner Friday</div>
           </div>
 
-          <div class="k" style="margin: 4px 0 8px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-tertiary);">Rail</div>
-          <div style="margin-bottom: 14px;">
-            <span class="rail-chip off">Cash App</span>
-            <span class="rail-chip off">Zelle</span>
-            <span class="rail-chip">Venmo</span>
-          </div>
-
           <div class="card">
             <div class="k">From</div>
             <h2>Spendable · $496</h2>
-            <p>Leaves $448 this week. Doesn’t touch bills or debt reserves.</p>
-            <span class="badge quiet">Inside plan</span>
+            <p>Sends cannot exceed spendable. Leaves $448.</p>
+            <span class="badge quiet">Inside spendable</span>
           </div>
 
           <div class="action-btn primary" style="width:100%; margin-top: 4px;">Send $48 via Venmo</div>
@@ -115,7 +116,7 @@
           </div>
           <div class="detail-type">Pay</div>
           <h1 class="detail-title">Request money.</h1>
-          <p class="detail-sub">Lands in checking when they pay. Same rails.</p>
+          <p class="detail-sub">Lands in checking when they pay.</p>
 
           <div class="seg">
             <div class="opt">Send</div>
@@ -124,22 +125,23 @@
 
           <div class="field">
             <div class="k">Amount</div>
-            <div class="v amount">$60</div>
-          </div>
-          <div class="field">
-            <div class="k">From</div>
-            <div class="v">Jordan Lee · Zelle</div>
-          </div>
-          <div class="field">
-            <div class="k">For</div>
-            <div class="v">Concert tickets</div>
+            <div class="v amount" contenteditable="true" inputmode="decimal">$60</div>
           </div>
 
-          <div class="k" style="margin: 4px 0 8px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-tertiary);">Rail</div>
+          <div class="k" style="margin: 4px 0 8px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-tertiary);">Payment app</div>
           <div style="margin-bottom: 14px;">
             <span class="rail-chip off">Cash App</span>
             <span class="rail-chip">Zelle</span>
             <span class="rail-chip off">Venmo</span>
+          </div>
+
+          <div class="field">
+            <div class="k">From</div>
+            <div class="v">Jordan Lee</div>
+          </div>
+          <div class="field">
+            <div class="k">For</div>
+            <div class="v">Concert tickets</div>
           </div>
 
           <div class="list-card">
