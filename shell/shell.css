@@ -290,7 +290,7 @@ body {
   height: var(--tab-bar-h);
   padding: 8px 6px calc(8px + var(--safe-bottom));
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-top: 1px solid var(--line);
   background: rgba(243, 241, 235, 0.94);
   backdrop-filter: blur(12px);
@@ -549,7 +549,8 @@ body {
 }
 
 /* six-tab */
-.tabs { grid-template-columns: repeat(6, 1fr); }
+.tabs { grid-template-columns: repeat(5, 1fr); }
+.tabs.tabs-next { grid-template-columns: repeat(6, 1fr); }
 .tab { font-size: 8px; letter-spacing: 0; }
 .card.crosslink h2 { font-size: 18px; }
 .card.crosslink { border-style: solid; }

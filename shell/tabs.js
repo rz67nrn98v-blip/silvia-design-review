@@ -14,12 +14,19 @@ const LABELS = {
   portfolio: 'Portfolio',
   ask: 'Ask',
 };
+/** Core v1 chrome — Portfolio is next-tier only */
+const CORE_KEYS = ['home', 'money', 'pay', 'decide', 'ask'];
+/** Look-only next-tier shells (data-active=portfolio or data-tabs=next) */
+const NEXT_KEYS = ['home', 'money', 'pay', 'decide', 'portfolio', 'ask'];
+
 document.querySelectorAll('nav.tabs').forEach((nav) => {
   const active = nav.dataset.active || 'home';
-  // migrate old peer active → pay
   const key = active === 'peer' ? 'pay' : active;
   nav.dataset.active = key;
-  nav.innerHTML = Object.keys(LABELS).map((k) => {
+  const next = key === 'portfolio' || nav.dataset.tabs === 'next';
+  const keys = next ? NEXT_KEYS : CORE_KEYS;
+  nav.classList.toggle('tabs-next', next);
+  nav.innerHTML = keys.map((k) => {
     const on = k === key ? ' active' : '';
     return `<div class="tab${on}"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">${ICONS[k]}</svg></span>${LABELS[k]}</div>`;
   }).join('');

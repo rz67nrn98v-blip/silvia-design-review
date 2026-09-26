@@ -33,7 +33,7 @@ Hero greeting ≈ 34px. Tracked labels 11px / 0.08em. Short sentences. No emoji.
 
 ## App chrome
 
-Phone only. Status bar + content + 6-tab bar. No desktop sidebar. No “Tiers / Watch film” website header. No “Created with Grok” chrome.
+Phone only. Status bar + content + 5-tab Core bar (Portfolio is next-tier only). No desktop sidebar. No “Tiers / Watch film” website header. No “Created with Grok” chrome.
 
 ## App IA
 
@@ -65,7 +65,7 @@ No named demo person in UI. Concept copy uses you / your plan. Not live advice.
 - **Empty until use.** Hero, status chips, and Needs you stay blank/neutral until the household connects and Silvia has real signal. Demo scenarios are examples only — never default copy.
 - **Current Status** (not “Market Response”). Baseline when nothing material happened: on track / quiet. Elevates only when something important changed, narrates what she did, then returns to baseline.
 - **Needs you.** High-contrast night card pattern. Empty until a real decision exists. One at a time.
-- **Tabs:** Home · Money · Pay · Decide · Portfolio · Ask.
+- **Tabs (Core):** Home · Money · Pay · Decide · Ask. Portfolio is next-tier look-only — not in the Core bar.
 
 
 ## Home Current Status — three states
@@ -122,7 +122,7 @@ Same empty-until-connect + instrument detail pattern. Spec later; leave IA room 
 
 ## Tab bar (v0.4 IA)
 
-**Home · Money · Pay · Decide · Portfolio · Ask**
+**Home · Money · Pay · Decide · Ask** (Core). Portfolio shells use a next-tier bar for look-only review.
 
 - **Money** — bank/cash/cards/debts/bills + instrument details. Not the home for P2P.
 - **Pay** — first-class tab for Cash App, Zelle, Venmo (and similar). Send, request, history, linked handles. Empty until linked. Goal: replace those native apps for the same jobs.
