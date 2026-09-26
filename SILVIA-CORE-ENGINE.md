@@ -109,7 +109,7 @@ If they are in Phase 0 or 1, she does not lecture them about index funds. She ge
 ## 2. Locked rules (do not break)
 
 1. **Credit cards — never quiet minimum-only.** Every cycle she asks to pay more than the minimum and recommends an affordable amount over minimum. Options: her amount · own amount · statement balance · **minimum this cycle only** (explicit, discouraged).  
-2. **Buffer — not assumed.** ~2 weeks of essential bills is a goal to endeavor on. Decline = $0 floor. She never pretends the cash exists.  
+2. **Buffer — not assumed.** ~2 weeks of essential bills is a goal to endeavor on. Decline = $0 goal — no buffer reserved. She never pretends the cash exists.  
 3. **Behind — catch-up path.** Propose how to get current from real money. If income cannot cover essentials after cuts, say so.  
 4. **Autopay** for fixed essentials inside the plan. She does not silently overdraft.  
 5. **UI copy:** plain language only.  
@@ -799,7 +799,7 @@ If they spend the reserved dollars, funded decreases. She does not invent it bac
 
 Decline:
 
-> “Floor is $0. I will not invent buffer cash. You can start this later from Plan.”
+> “Buffer stays at $0. I will not invent buffer cash. You can start this later from Plan.”
 
 ---
 
@@ -1176,7 +1176,7 @@ A build is Core-correct when all of these are true:
 - [ ] Fresh install shows no Anthony numbers  
 - [ ] Plan refuses to compute without income and at least one bill  
 - [ ] Card row never stores minimum as the quiet default  
-- [ ] Buffer decline → $0 floor, no guardrail  
+- [ ] Buffer decline → $0 goal, no guardrail  
 - [ ] Overdue produces a sequenced catch-up, not only a red list  
 - [ ] Shortfall copy admits when income cannot cover essentials  
 - [ ] Spendable never exceeds the plan rule, and Pay cannot exceed spendable or cash  

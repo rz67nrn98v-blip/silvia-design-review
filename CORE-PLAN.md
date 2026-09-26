@@ -6,6 +6,8 @@
 **Eng build truth (leftover-first):** [`SILVIA-CORE-ENGINE.md`](./SILVIA-CORE-ENGINE.md) — domain models, compiler, living plan, fixtures A–I, acceptance. If this short file and the engine conflict on math or change rules, **the engine wins**. Product locks below still win on cards / buffer / catch-up / no jargon / no invent cash.
 
 **Adopted:** Sep 25 2026 (leftover-first).  
+**Copy locks (Sep 25 2026):** Never say **floor** in user-facing Core copy. Never say Core **ran overnight** / while you slept — overnight framing is top-tier Autopilot only; Core is continuous ops when they check in.
+
 **Revert tip:** Design git `a6e4324` + `/workspace/silvia-core-revert-2026-09-25/` (CoS box).
 
 ---
@@ -72,7 +74,7 @@ A living set of rules, not a spreadsheet screenshot:
 ## Locked rules (do not break)
 
 1. **Credit cards — never quiet minimum-only.** Every cycle she asks to pay more and recommends an affordable amount over minimum from leftover. Options: her amount · own amount · statement · **minimum this cycle only** (expires; she asks again).  
-2. **Buffer — not assumed.** ~2 weeks of essential bills is a goal. Decline = $0 floor. Stored per-payday commitment only if they accept.  
+2. **Buffer — not assumed.** ~2 weeks of essential bills is a goal. Decline = $0 goal — no buffer reserved. Stored per-payday commitment only if they accept.  
 3. **Behind — catch-up path.** Propose how to get current from real money. If income cannot cover essentials after cuts, say so.  
 4. **Autopay** for fixed essentials inside the plan. She does not silently overdraft.  
 5. **UI copy:** plain language only. Never “Core exception types” in the product.  
