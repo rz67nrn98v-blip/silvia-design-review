@@ -109,7 +109,7 @@
   <div class="meta">
     <div class="tag">Silvia · Core · Ask</div>
     <h1>OS assistant for household money.</h1>
-    <p>Plan-grounded chips — afford, why didn’t pay, what to pay on a card, how to get current. Structure only. No advice theater.</p>
+    <p>Plan-grounded chips — afford until next payday, why didn’t pay, card (hide if no debt), get current. Structure only. No advice theater.</p>
   </div>
 
   <div class="row">
@@ -134,7 +134,7 @@
           <div class="eyebrow">Ask</div>
           <div class="ask-empty">
             <h1 class="hero">I’m Silvia.</h1>
-            <p class="lede empty">I run bills and the household plan. Needs income and expenses first — I never invent numbers. Ask against spendable, buffer goal, cards, and catch-up once they’re in.</p>
+            <p class="lede empty">I run bills and the household plan. Needs income and expenses first — I never invent numbers. Ask what you can spend until next payday once they’re in.</p>
             <div class="chips-ask">
               <span class="chip-ask">What can you do?</span>
               <span class="chip-ask">How does the plan work?</span>
@@ -151,7 +151,7 @@
     </div>
 
     <div class="col">
-      <div class="col-label">B · What to pay on the card</div>
+      <div class="col-label">B · hasDebt · card + afford</div>
       <div class="device">
         <div class="notch"></div>
         <div class="status-bar"><span>6:18</span><span>5G</span></div>
@@ -176,7 +176,7 @@
               </div>
               <div class="bubble her">
                 <div class="who">Silvia</div>
-                Sapphire due Sep 24. Minimum is $240 — I won’t leave you on that quietly. From spendable after essentials I recommend <strong>$400</strong> (+$160 toward debt). Or own amount · statement $680 · min this cycle only (discouraged).
+                Sapphire due Sep 24. Minimum is $240 — I won’t leave you on that quietly. From leftover after essentials I recommend <strong>$400</strong> (+$160 toward debt). Or own amount · statement $680 · min this cycle only (discouraged). Spendable until next payday: <strong>$496</strong>.
               </div>
               <div class="chips-ask" style="align-self:flex-start;margin-top:0">
                 <span class="chip-ask" style="background:var(--forest-muted);border-color:var(--forest)">Pay her $400</span>
@@ -185,6 +185,7 @@
               </div>
             </div>
             <div class="chips-ask">
+              <span class="chip-ask">What can I spend until next payday?</span>
               <span class="chip-ask">What should I pay on the card?</span>
               <span class="chip-ask">Can I afford X?</span>
               <span class="chip-ask">How do we get current?</span>
@@ -201,7 +202,57 @@
     </div>
 
     <div class="col">
-      <div class="col-label">C · How do we get current?</div>
+      <div class="col-label">C · no debt · hide card chip</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>6:20</span><span>5G</span></div>
+        <div class="screen">
+          <div class="app-bar">
+            <div class="brand">
+              <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 8 L16 4 L16 14 L6 18 Z" fill="#1C5C48"/>
+                <path d="M16 4 L26 8 L26 18 L16 14 Z" fill="#2A6B56"/>
+                <path d="M6 18 L16 14 L16 28 L6 24 Z" fill="#0B1412" opacity="0.9"/>
+                <path d="M16 14 L26 18 L26 24 L16 28 Z" fill="#1C5C48"/>
+              </svg>
+              <span class="wordmark">Silvia</span>
+            </div>
+            <span class="tier">Core</span>
+          </div>
+          <div class="eyebrow">Ask</div>
+          <div class="chat">
+            <div class="chat-scroll">
+              <div class="bubble you">
+                What can I afford until next payday?
+              </div>
+              <div class="bubble her">
+                <div class="who">Silvia</div>
+                <strong>$892</strong> until next payday. Bills are covered (rent, electric, phone). No card on this plan. That number is yours — compare any spend to spendable.
+              </div>
+              <div class="chips-ask" style="align-self:flex-start;margin-top:0">
+                <span class="chip-ask" style="background:var(--forest-muted);border-color:var(--forest)">Open Plan</span>
+                <span class="chip-ask">Can I afford $40 dinner?</span>
+              </div>
+            </div>
+            <div class="chips-ask">
+              <span class="chip-ask">What can I afford until next payday?</span>
+              <span class="chip-ask">What can I spend until next payday?</span>
+              <span class="chip-ask">Why didn’t Electric pay?</span>
+              <span class="chip-ask">How do we get current?</span>
+            </div>
+            <div class="composer">
+              <span class="ph">Message Silvia…</span>
+              <span class="send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </div>
+        </div>
+        <nav class="tabs" data-active="ask"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="col-label">D · How do we get current?</div>
       <div class="device">
         <div class="notch"></div>
         <div class="status-bar"><span>6:22</span><span>5G</span></div>
@@ -235,8 +286,8 @@
             </div>
             <div class="chips-ask">
               <span class="chip-ask">How do we get current?</span>
+              <span class="chip-ask">What can I spend until next payday?</span>
               <span class="chip-ask">Why didn’t Electric pay?</span>
-              <span class="chip-ask">What’s spendable?</span>
             </div>
             <div class="composer">
               <span class="ph">Message Silvia…</span>
