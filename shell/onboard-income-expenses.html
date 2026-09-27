@@ -34,7 +34,7 @@
   <div class="meta">
     <div class="tag">Silvia · Core · First-run · Inputs</div>
     <h1>Income and expenses.</h1>
-    <p>Capture or review what landed from links — or typed in. Net pay preferred. Each bill has amount, due window, priority. No invented numbers.</p>
+    <p>Capture or review what landed from links — or typed in. Net pay preferred. Each bill has amount, due (calendar tap — never type a date string), priority. No invented numbers.</p>
   </div>
 
   <div class="row">
@@ -70,13 +70,19 @@
                 <span class="freq-opt">monthly</span>
               </div>
             </div>
-            <div class="field">
+            <div class="field" role="button" aria-label="Next deposit, open calendar">
               <div class="k">Next deposit</div>
-              <div class="v placeholder">Date</div>
+              <div class="v placeholder" style="display:flex;justify-content:space-between;align-items:center">
+                <span>Pick a day</span>
+                <span style="color:var(--forest);font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">Calendar</span>
+              </div>
             </div>
-            <div class="field">
+            <div class="field" role="button" aria-label="Second deposit, open calendar">
               <div class="k">Second deposit</div>
-              <div class="v placeholder">Date</div>
+              <div class="v placeholder" style="display:flex;justify-content:space-between;align-items:center">
+                <span>Pick a day</span>
+                <span style="color:var(--forest);font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">Calendar</span>
+              </div>
             </div>
           </div>
 
@@ -125,8 +131,8 @@
             <div class="list-head">Income</div>
             <div class="list-row"><span class="muted">No income yet</span></div>
             <div class="list-row"><span>How often</span><span class="muted">Unset</span></div>
-            <div class="list-row"><span>Next deposit</span><span class="muted">Unset</span></div>
-            <div class="list-row"><span>Second deposit</span><span class="muted">Unset</span></div>
+            <div class="list-row tappable"><span>Next deposit</span><span class="muted">Pick a day</span></div>
+            <div class="list-row tappable"><span>Second deposit</span><span class="muted">Pick a day</span></div>
           </div>
 
           <div class="list-card empty">
