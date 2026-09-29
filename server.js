@@ -11,7 +11,7 @@ import { randomUUID } from "node:crypto";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = __dirname;
-const PORT = Number(process.env.PORT || 80);
+const PORT = Number(process.env.PORT || 8080);
 const ANDROID_PACKAGE = "com.silvia.app";
 const CLIENT_NAME = "Silvia";
 
