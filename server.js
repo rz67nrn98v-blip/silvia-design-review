@@ -160,18 +160,19 @@ const server = http.createServer(async (req, res) => {
     const url = new URL(req.url || "/", "http://localhost");
     let pathname = url.pathname.replace(/\/+$/, "") || "/";
 
-    // Alias /plaid/* → /*
+    const isPlaidHealth = pathname === "/plaid/health" || pathname === "/health"
+    // Alias /plaid/* → /* for API routes
     if (pathname.startsWith("/plaid/")) {
       pathname = pathname.slice("/plaid".length) || "/";
     }
 
-    if (method === "OPTIONS" && (PLAID_PATHS.has(pathname) || pathname.startsWith("/item") || pathname.startsWith("/link"))) {
+    if (method === "OPTIONS" && (PLAID_PATHS.has(pathname) || pathname.startsWith("/item") || pathname.startsWith("/link") || isPlaidHealth)) {
       sendJson(res, 200, { ok: true });
       return;
     }
 
-    // JSON health for Plaid (prefer /plaid/health to avoid clobbering a future static health page)
-    if (method === "GET" && (pathname === "/plaid/health" || (pathname === "/health" && (url.searchParams.has("plaid") || (req.headers.accept || "").includes("application/json"))))) {
+    // JSON health for Plaid — /plaid/health and /health both
+    if (method === "GET" && (isPlaidHealth || pathname === "/health")) {
       sendJson(res, 200, {
         ok: true,
         service: "silvia-plaid",
