@@ -675,13 +675,64 @@ body {
   font-weight: 500;
   margin-bottom: 16px;
 }
+
+/* Payment app chips (compose) — prefer .pay-app-* over legacy .rail-chip */
+.pay-app-row {
+  margin-bottom: 14px;
+}
+.pay-app-row > .k {
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.pay-app-row .pay-app-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pay-app-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--paper-elevated);
+  color: var(--ink-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.pay-app-chip.on {
+  border-color: var(--forest);
+  background: var(--forest-muted);
+  color: var(--forest);
+}
+.pay-app-chip.off {
+  color: var(--ink-tertiary);
+  background: transparent;
+  font-weight: 500;
+}
+.pay-app-chip.choose {
+  border-style: dashed;
+  color: var(--ink-tertiary);
+  background: transparent;
+  font-weight: 500;
+}
+/* Legacy alias — keep selectors working; UI copy says Payment app */
 .rail-chip {
-  display: inline-block;
-  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 14px;
   margin: 0 6px 6px 0;
   border-radius: var(--radius-pill);
   border: 1px solid var(--line);
   background: var(--paper-elevated);
+  color: var(--ink-secondary);
   font-size: 13px;
   font-weight: 600;
 }
@@ -693,7 +744,9 @@ body {
 .rail-chip.off {
   color: var(--ink-tertiary);
   background: transparent;
+  font-weight: 500;
 }
+
 .seg {
   display: flex;
   gap: 0;
@@ -701,6 +754,7 @@ body {
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   overflow: hidden;
+  background: var(--paper-elevated);
 }
 .seg .opt {
   flex: 1;
@@ -709,28 +763,54 @@ body {
   font-size: 14px;
   font-weight: 600;
   color: var(--ink-secondary);
-  background: var(--paper-elevated);
+  background: transparent;
 }
 .seg .opt.on {
   background: var(--forest);
   color: var(--on-forest);
 }
+
+/* Compose fields — paper cards; amount is hero */
 .field {
-  padding: 12px 0;
-  border-top: 1px solid var(--line);
+  background: var(--paper-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-bottom: 10px;
 }
 .field .k {
-  font-size: 11px;
-  letter-spacing: 0.06em;
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--ink-tertiary);
-  margin-bottom: 4px;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
-.field .v { font-size: 16px; font-weight: 500; }
+.field .v {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.field .v.placeholder {
+  color: var(--ink-tertiary);
+  font-weight: 400;
+}
+.field.amount-hero {
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.field.amount-hero .v.amount {
+  font-family: var(--font-display);
+  font-size: 44px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  font-weight: 400;
+}
 .field .v.amount {
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: 36px;
   letter-spacing: -0.02em;
+  font-weight: 400;
 }
 .hist-row {
   display: grid;

@@ -12,9 +12,9 @@
 </head>
 <body>
   <div class="meta">
-    <div class="tag">Silvia · Pay tab v0.1</div>
-    <h1>Send & request, first-class.</h1>
-    <p>Venmo, Zelle, Cash App — send, request, history, linked handles. Replaces opening those apps for the same jobs. Empty until linked.</p>
+    <div class="tag">Silvia · Core · Pay tab · Alias of pay · phone UI is Pay</div>
+    <h1>Send &amp; request, first-class.</h1>
+    <p>Cash App, Zelle, Venmo — send, request, history, linked handles. Entry to compose. Empty until linked. Sends from spendable only.</p>
   </div>
 
   <div class="row">
@@ -35,20 +35,20 @@
               </svg>
               <span class="wordmark">Silvia</span>
             </div>
-            <span class="tier muted">Connect</span>
+            <span class="tier muted">Core</span>
           </div>
           <div class="eyebrow">Pay</div>
           <h1 class="hero">No payment apps linked.</h1>
-          <p class="lede empty">Connect Cash App, Zelle, or Venmo.</p>
+          <p class="lede empty">Connect Cash App, Zelle, or Venmo to send and request here.</p>
           <div class="action-row">
             <div class="action-btn ghost">Send</div>
             <div class="action-btn ghost">Request</div>
           </div>
           <div class="list-card empty">
             <div class="list-head">Payment apps</div>
-            <div class="list-row"><span>Venmo</span><span class="muted">Not linked</span></div>
-            <div class="list-row"><span>Zelle</span><span class="muted">Not linked</span></div>
             <div class="list-row"><span>Cash App</span><span class="muted">Not linked</span></div>
+            <div class="list-row"><span>Zelle</span><span class="muted">Not linked</span></div>
+            <div class="list-row"><span>Venmo</span><span class="muted">Not linked</span></div>
           </div>
           <div class="list-card empty">
             <div class="list-head">Activity</div>
@@ -77,11 +77,17 @@
               </svg>
               <span class="wordmark">Silvia</span>
             </div>
-            <span class="tier">Autopilot</span>
+            <span class="tier">Core</span>
           </div>
           <div class="eyebrow">Pay</div>
           <h1 class="hero">Pay people here.</h1>
           <p class="lede">From spendable only.</p>
+
+          <div class="card spend">
+            <div class="k">Spendable until next payday</div>
+            <h2 class="num">$496</h2>
+            <p>Sends cannot exceed spendable.</p>
+          </div>
 
           <div class="action-row">
             <div class="action-btn primary">Send</div>
@@ -90,9 +96,9 @@
 
           <div class="list-card">
             <div class="list-head">Linked payment apps</div>
-            <div class="list-row tappable"><span>Venmo · @you</span><span><span class="pill forest">Linked</span><span class="arrow">›</span></span></div>
-            <div class="list-row tappable"><span>Zelle · Chase</span><span><span class="pill forest">Linked</span><span class="arrow">›</span></span></div>
             <div class="list-row tappable"><span>Cash App · $you</span><span><span class="pill forest">Linked</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Zelle · Chase</span><span><span class="pill forest">Linked</span><span class="arrow">›</span></span></div>
+            <div class="list-row tappable"><span>Venmo · @you</span><span><span class="pill forest">Linked</span><span class="arrow">›</span></span></div>
           </div>
 
           <div class="list-card">
@@ -103,9 +109,11 @@
 
           <div class="list-card">
             <div class="list-head">Recent</div>
-            <div class="hist-row"><span class="name">Maya · dinner</span><span class="when">Venmo · Today</span><span class="amt charge">−$48.00</span></div>
-            <div class="hist-row"><span class="name">Chris · rent share</span><span class="when">Zelle · Sep 12</span><span class="amt charge">−$650.00</span></div>
-            <div class="hist-row"><span class="name">Alex · paid you</span><span class="when">Cash App · Sep 10</span><span class="amt pay">+$25.00</span></div>
+            <div class="hist-row"><span class="name">Maya · dinner</span><span class="when">Venmo · Pending</span><span class="amt out">−$48.00</span></div>
+            <div class="hist-row"><span class="name">Chris · rent share</span><span class="when">Zelle · Sep 12 · Sent</span><span class="amt out">−$650.00</span></div>
+            <div class="hist-row"><span class="name">Alex · paid you</span><span class="when">Cash App · Sep 10</span><span class="amt in">+$25.00</span></div>
+            <div class="hist-row"><span class="name">Sam · groceries</span><span class="when">Venmo · Failed · restored</span><span class="amt out">−$32.00</span></div>
+            <div class="list-row tappable"><span>Full history</span><span class="arrow">›</span></div>
           </div>
         </div>
         <nav class="tabs" data-active="pay"></nav>

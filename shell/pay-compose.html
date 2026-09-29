@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Silvia — Pay · Send / Request</title>
+  <title>Silvia — Pay · Compose</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -12,45 +12,15 @@
 </head>
 <body>
   <div class="meta">
-    <div class="tag">Silvia · Pay · Send / Request</div>
-    <h1>Send &amp; request inside Silvia.</h1>
-    <p>Cash App, Zelle, Venmo. Empty until linked. Live: amount → payment app → person; recent activity stays on Pay.</p>
+    <div class="tag">Silvia · Core · Pay · Compose</div>
+    <h1>Amount → Payment app → To.</h1>
+    <p>Send or request across Cash App, Zelle, Venmo. Empty is a quiet form — not a lecture. Sends from spendable only.</p>
   </div>
 
   <div class="row">
-    <!-- EMPTY -->
+    <!-- EMPTY COMPOSE -->
     <div class="col">
-      <div class="col-label">A · Pay empty</div>
-      <div class="device">
-        <div class="notch"></div>
-        <div class="status-bar"><span>9:41</span><span>5G</span></div>
-        <div class="screen">
-          <div class="back-bar">
-            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
-            Pay
-          </div>
-          <div class="detail-type">Pay</div>
-          <h1 class="detail-title">No payment apps linked.</h1>
-          <p class="detail-sub">Connect Cash App, Zelle, or Venmo.</p>
-          <div class="action-row">
-            <div class="action-btn ghost">Send</div>
-            <div class="action-btn ghost">Request</div>
-          </div>
-          <div class="list-card empty">
-            <div class="list-head">Payment apps</div>
-            <div class="list-row"><span>Cash App</span><span class="muted">Not linked</span></div>
-            <div class="list-row"><span>Zelle</span><span class="muted">Not linked</span></div>
-            <div class="list-row"><span>Venmo</span><span class="muted">Not linked</span></div>
-          </div>
-        </div>
-        <nav class="tabs" data-active="pay"></nav>
-        <div class="home-indicator"></div>
-      </div>
-    </div>
-
-    <!-- LIVE SEND -->
-    <div class="col">
-      <div class="col-label">B · Send (live)</div>
+      <div class="col-label">A · Empty compose</div>
       <div class="device">
         <div class="notch"></div>
         <div class="status-bar"><span>9:41</span><span>5G</span></div>
@@ -59,7 +29,10 @@
             <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
             Pay
           </div>
-          <div class="detail-type">Pay</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div class="detail-type" style="margin:0">Pay</div>
+            <span class="tier">Core</span>
+          </div>
           <h1 class="detail-title">Send money.</h1>
           <p class="detail-sub">From spendable only.</p>
 
@@ -68,16 +41,80 @@
             <div class="opt">Request</div>
           </div>
 
+          <div class="field amount-hero">
+            <div class="k">Amount</div>
+            <div class="v amount placeholder" contenteditable="true" inputmode="decimal">$0</div>
+          </div>
+
+          <div class="pay-app-row">
+            <div class="k">Payment app</div>
+            <div class="pay-app-chips">
+              <span class="pay-app-chip off">Cash App</span>
+              <span class="pay-app-chip off">Zelle</span>
+              <span class="pay-app-chip off">Venmo</span>
+              <span class="pay-app-chip choose">Other</span>
+            </div>
+          </div>
+
           <div class="field">
+            <div class="k">To</div>
+            <div class="v placeholder">Name or handle</div>
+          </div>
+          <div class="field">
+            <div class="k">For <span style="font-weight:500;text-transform:none;letter-spacing:0;color:var(--ink-tertiary)">(optional)</span></div>
+            <div class="v placeholder">What’s it for?</div>
+          </div>
+
+          <div class="card">
+            <div class="k">Spendable</div>
+            <h2>$496</h2>
+            <p>Sends cannot exceed spendable.</p>
+            <span class="badge quiet">From spendable only</span>
+          </div>
+
+          <div class="action-btn ghost" style="width:100%; margin-top: 4px;">Send</div>
+        </div>
+        <nav class="tabs" data-active="pay"></nav>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- FILLED SEND -->
+    <div class="col">
+      <div class="col-label">B · Send · filled</div>
+      <div class="device">
+        <div class="notch"></div>
+        <div class="status-bar"><span>9:41</span><span>5G</span></div>
+        <div class="screen screen-scroll">
+          <div class="back-bar">
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
+            Pay
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div class="detail-type" style="margin:0">Pay</div>
+            <span class="tier">Core</span>
+          </div>
+          <h1 class="detail-title">Send money.</h1>
+          <p class="detail-sub">From spendable only.</p>
+
+          <div class="seg">
+            <div class="opt on">Send</div>
+            <div class="opt">Request</div>
+          </div>
+
+          <div class="field amount-hero">
             <div class="k">Amount</div>
             <div class="v amount" contenteditable="true" inputmode="decimal">$48</div>
           </div>
 
-          <div class="k" style="margin: 4px 0 8px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-tertiary);">Payment app</div>
-          <div style="margin-bottom: 14px;">
-            <span class="rail-chip off">Cash App</span>
-            <span class="rail-chip off">Zelle</span>
-            <span class="rail-chip">Venmo</span>
+          <div class="pay-app-row">
+            <div class="k">Payment app</div>
+            <div class="pay-app-chips">
+              <span class="pay-app-chip off">Cash App</span>
+              <span class="pay-app-chip off">Zelle</span>
+              <span class="pay-app-chip on">Venmo</span>
+              <span class="pay-app-chip off">Other</span>
+            </div>
           </div>
 
           <div class="field">
@@ -85,14 +122,14 @@
             <div class="v">Maya Chen · @maya.c</div>
           </div>
           <div class="field">
-            <div class="k">For</div>
+            <div class="k">For <span style="font-weight:500;text-transform:none;letter-spacing:0;color:var(--ink-tertiary)">(optional)</span></div>
             <div class="v">Dinner Friday</div>
           </div>
 
-          <div class="card">
-            <div class="k">From</div>
-            <h2>Spendable · $496</h2>
-            <p>Sends cannot exceed spendable. Leaves $448.</p>
+          <div class="card spend">
+            <div class="k">Spendable after send</div>
+            <h2>$448</h2>
+            <p>Sends cannot exceed spendable. Leaves $448 of $496.</p>
             <span class="badge quiet">Inside spendable</span>
           </div>
 
@@ -103,9 +140,9 @@
       </div>
     </div>
 
-    <!-- LIVE REQUEST -->
+    <!-- FILLED REQUEST -->
     <div class="col">
-      <div class="col-label">C · Request (live)</div>
+      <div class="col-label">C · Request · filled</div>
       <div class="device">
         <div class="notch"></div>
         <div class="status-bar"><span>9:41</span><span>5G</span></div>
@@ -114,7 +151,10 @@
             <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
             Pay
           </div>
-          <div class="detail-type">Pay</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div class="detail-type" style="margin:0">Pay</div>
+            <span class="tier">Core</span>
+          </div>
           <h1 class="detail-title">Request money.</h1>
           <p class="detail-sub">Lands in checking when they pay.</p>
 
@@ -123,16 +163,19 @@
             <div class="opt on">Request</div>
           </div>
 
-          <div class="field">
+          <div class="field amount-hero">
             <div class="k">Amount</div>
             <div class="v amount" contenteditable="true" inputmode="decimal">$60</div>
           </div>
 
-          <div class="k" style="margin: 4px 0 8px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-tertiary);">Payment app</div>
-          <div style="margin-bottom: 14px;">
-            <span class="rail-chip off">Cash App</span>
-            <span class="rail-chip">Zelle</span>
-            <span class="rail-chip off">Venmo</span>
+          <div class="pay-app-row">
+            <div class="k">Payment app</div>
+            <div class="pay-app-chips">
+              <span class="pay-app-chip off">Cash App</span>
+              <span class="pay-app-chip on">Zelle</span>
+              <span class="pay-app-chip off">Venmo</span>
+              <span class="pay-app-chip off">Other</span>
+            </div>
           </div>
 
           <div class="field">
@@ -140,17 +183,18 @@
             <div class="v">Jordan Lee</div>
           </div>
           <div class="field">
-            <div class="k">For</div>
+            <div class="k">For <span style="font-weight:500;text-transform:none;letter-spacing:0;color:var(--ink-tertiary)">(optional)</span></div>
             <div class="v">Concert tickets</div>
           </div>
 
-          <div class="list-card">
-            <div class="list-head">Open requests</div>
-            <div class="list-row"><span>Jordan · concert</span><span class="pill">$60 · pending</span></div>
-            <div class="list-row"><span>Sam · groceries</span><span class="pill">$32 · Venmo</span></div>
+          <div class="card">
+            <div class="k">When they pay</div>
+            <h2>Lands in checking.</h2>
+            <p>You’ll see it on Pay. Folds into spendable after it clears.</p>
+            <span class="badge quiet">No spendable cap</span>
           </div>
 
-          <div class="action-btn primary" style="width:100%;">Request $60 via Zelle</div>
+          <div class="action-btn primary" style="width:100%; margin-top: 4px;">Request $60 via Zelle</div>
         </div>
         <nav class="tabs" data-active="pay"></nav>
         <div class="home-indicator"></div>

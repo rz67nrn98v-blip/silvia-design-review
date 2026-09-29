@@ -12,9 +12,9 @@
 </head>
 <body>
   <div class="meta">
-    <div class="tag">Silvia · Pay · Confirm</div>
+    <div class="tag">Silvia · Core · Pay · Confirm</div>
     <h1>One clear confirm.</h1>
-    <p>Review amount, person, payment app, and spendable — then send or request.</p>
+    <p>Review amount, person, Payment app, and spendable — then send or request. Sends cannot exceed spendable.</p>
   </div>
   <div class="row">
     <div class="col">
@@ -27,7 +27,10 @@
             <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
             Edit
           </div>
-          <div class="eyebrow">Confirm send</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div class="eyebrow" style="margin:0">Confirm send</div>
+            <span class="tier">Core</span>
+          </div>
           <div class="confirm-amount">$48.00</div>
           <div class="confirm-to">to Maya Chen</div>
 
@@ -35,13 +38,14 @@
             <div class="list-row"><span>Payment app</span><span>Venmo · @maya.c</span></div>
             <div class="list-row"><span>For</span><span>Dinner Friday</span></div>
             <div class="list-row"><span>From</span><span>Spendable</span></div>
-            <div class="list-row"><span>After</span><span>$448 this week</span></div>
+            <div class="list-row"><span>After</span><span>$448 remaining</span></div>
           </div>
 
-          <div class="card">
+          <div class="card spend">
             <div class="k">Spendable</div>
             <h2>Inside spendable.</h2>
             <p>Sends cannot exceed spendable.</p>
+            <span class="badge quiet">From spendable only</span>
           </div>
 
           <div class="action-btn primary" style="width:100%;margin-top:8px">Confirm send</div>
@@ -62,7 +66,10 @@
             <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 6l-6 6 6 6"/></svg></span>
             Edit
           </div>
-          <div class="eyebrow">Confirm request</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div class="eyebrow" style="margin:0">Confirm request</div>
+            <span class="tier">Core</span>
+          </div>
           <div class="confirm-amount">$60.00</div>
           <div class="confirm-to">from Jordan Lee</div>
 
