@@ -1,0 +1,12 @@
+{
+  "name": "silvia-design-review",
+  "version": "0.5.12",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
