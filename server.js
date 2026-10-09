@@ -98,6 +98,181 @@ function todayIso() {
   return new Date().toISOString().slice(0, 10);
 }
 
+function mapTransaction(t) {
+  return {
+    transaction_id: t.transaction_id,
+    account_id: t.account_id,
+    name: t.name,
+    merchant_name: t.merchant_name ?? null,
+    amount: t.amount,
+    date: t.date,
+    pending: t.pending,
+    category: t.category ?? null,
+    personal_finance_category: t.personal_finance_category ?? null,
+  };
+}
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+/**
+ * Pull transactions (paginated) with a short PRODUCT_NOT_READY retry — fresh Items
+ * often need a few seconds before /transactions/get returns.
+ */
+async function fetchTransactions(accessToken, days, { retries = 4, waitMs = 2500 } = {}) {
+  const start_date = isoDaysAgo(days);
+  const end_date = todayIso();
+  let attempt = 0;
+  for (;;) {
+    const out = [];
+    let total = null;
+    let offset = 0;
+    let lastErr = null;
+    while (total === null || offset < total) {
+      const tx = await plaidPost("/transactions/get", {
+        access_token: accessToken,
+        start_date,
+        end_date,
+        options: { count: 500, offset },
+      });
+      if (!tx.ok) {
+        lastErr = tx;
+        break;
+      }
+      const batch = tx.data.transactions || [];
+      total = tx.data.total_transactions ?? batch.length;
+      out.push(...batch.map(mapTransaction));
+      offset += batch.length;
+      if (!batch.length || offset >= 1500) break;
+    }
+    if (!lastErr) return { ok: true, transactions: out, total: total ?? out.length };
+    const code = lastErr.data?.error_code;
+    if (code === "PRODUCT_NOT_READY" && attempt < retries) {
+      attempt += 1;
+      await sleep(waitMs);
+      continue;
+    }
+    return { ok: false, status: lastErr.status, error: code || "plaid_transactions_failed", transactions: [] };
+  }
+}
+function summarizeStream(s) {
+  return {
+    account_id: s.account_id,
+    description: s.description ?? null,
+    merchant_name: s.merchant_name ?? null,
+    frequency: s.frequency ?? null,
+    first_date: s.first_date ?? null,
+    last_date: s.last_date ?? null,
+    predicted_next_date: s.predicted_next_date ?? null,
+    average_amount: s.average_amount?.amount ?? null,
+    last_amount: s.last_amount?.amount ?? null,
+    is_active: Boolean(s.is_active),
+    status: s.status ?? null,
+    pfc_primary: s.personal_finance_category?.primary ?? null,
+    pfc_detailed: s.personal_finance_category?.detailed ?? null,
+    transaction_count: Array.isArray(s.transaction_ids) ? s.transaction_ids.length : null,
+  };
+}
+async function fetchRecurring(accessToken, { retries = 0, waitMs = 2500 } = {}) {
+  let r = await plaidPost("/transactions/recurring/get", { access_token: accessToken });
+  for (let i = 0; !r.ok && r.data?.error_code === "PRODUCT_NOT_READY" && i < retries; i++) {
+    await sleep(waitMs);
+    r = await plaidPost("/transactions/recurring/get", { access_token: accessToken });
+  }
+  if (!r.ok) return { recurring: null, error: r.data?.error_code || "plaid_recurring_failed" };
+  return {
+    recurring: {
+      inflow_streams: (r.data.inflow_streams || []).map(summarizeStream),
+      outflow_streams: (r.data.outflow_streams || []).map(summarizeStream),
+    },
+    error: null,
+  };
+}
+/** Liabilities without PII (no addresses / account numbers). Never invents a minimum. */
+function summarizeLiabilities(l) {
+  const out = [];
+  for (const c of l?.credit || []) {
+    const purchase = (c.aprs || []).find((a) => a.apr_type === "purchase_apr");
+    out.push({
+      kind: "credit",
+      account_id: c.account_id,
+      minimum_payment: c.minimum_payment_amount ?? null,
+      next_payment_due_date: c.next_payment_due_date ?? null,
+      last_statement_balance: c.last_statement_balance ?? null,
+      apr: purchase?.apr_percentage ?? null,
+      is_overdue: c.is_overdue ?? null,
+      past_due_amount: null,
+      last_payment_amount: c.last_payment_amount ?? null,
+      last_payment_date: c.last_payment_date ?? null,
+    });
+  }
+  for (const s of l?.student || []) {
+    out.push({
+      kind: "student",
+      account_id: s.account_id,
+      minimum_payment: s.minimum_payment_amount ?? null,
+      next_payment_due_date: s.next_payment_due_date ?? null,
+      last_statement_balance: s.last_statement_balance ?? null,
+      apr: s.interest_rate_percentage ?? null,
+      is_overdue: s.is_overdue ?? null,
+      past_due_amount: null,
+      last_payment_amount: s.last_payment_amount ?? null,
+      last_payment_date: s.last_payment_date ?? null,
+    });
+  }
+  for (const m of l?.mortgage || []) {
+    out.push({
+      kind: "mortgage",
+      account_id: m.account_id,
+      minimum_payment: m.next_monthly_payment ?? null,
+      next_payment_due_date: m.next_payment_due_date ?? null,
+      last_statement_balance: null,
+      apr: m.interest_rate?.percentage ?? null,
+      is_overdue: m.past_due_amount != null ? m.past_due_amount > 0 : null,
+      past_due_amount: m.past_due_amount ?? null,
+      last_payment_amount: m.last_payment_amount ?? null,
+      last_payment_date: m.last_payment_date ?? null,
+    });
+  }
+  for (const n of l?.loan || []) {
+    out.push({
+      kind: "loan",
+      account_id: n.account_id,
+      minimum_payment: n.next_payment_amount ?? null,
+      next_payment_due_date: n.next_payment_due_date ?? null,
+      last_statement_balance: null,
+      apr: n.interest_rate?.percentage ?? null,
+      is_overdue: null,
+      past_due_amount: null,
+      last_payment_amount: n.last_payment_amount ?? null,
+      last_payment_date: n.last_payment_date ?? null,
+    });
+  }
+  return out;
+}
+async function fetchLiabilities(accessToken) {
+  const r = await plaidPost("/liabilities/get", { access_token: accessToken });
+  if (!r.ok) return { liabilities: null, error: r.data?.error_code || "plaid_liabilities_failed" };
+  return { liabilities: summarizeLiabilities(r.data.liabilities), error: null };
+}
+/** Accounts + transactions + recurring + liabilities for plan drafts. No tokens in output. */
+async function buildItemSummary(accessToken, days = 90, { recurringRetries = 0 } = {}) {
+  const accts = await plaidPost("/accounts/get", { access_token: accessToken });
+  const accounts = accts.ok ? summarizeAccounts(accts.data.accounts || []) : [];
+  const tx = await fetchTransactions(accessToken, days);
+  const [rec, li] = await Promise.all([fetchRecurring(accessToken, { retries: recurringRetries }), fetchLiabilities(accessToken)]);
+  return {
+    accounts,
+    transactions: tx.transactions,
+    transactions_window_days: days,
+    recurring: rec.recurring,
+    liabilities: li.liabilities,
+    data_status: {
+      accounts: accts.ok ? "ok" : accts.data?.error_code || "failed",
+      transactions: tx.ok ? "ok" : tx.error,
+      recurring: rec.error || "ok",
+      liabilities: li.error || "ok",
+    },
+  };
+}
+
 const MIME = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -151,6 +326,7 @@ const PLAID_PATHS = new Set([
   "/item/accounts",
   "/item/transactions",
   "/item/disconnect",
+  "/item/summary",
   "/plaid/health",
 ]);
 
@@ -232,42 +408,37 @@ const server = http.createServer(async (req, res) => {
       }
       const accessToken = ex.data.access_token;
       const itemId = ex.data.item_id;
-      const accts = await plaidPost("/accounts/get", { access_token: accessToken });
-      const accounts = accts.ok ? summarizeAccounts(accts.data.accounts || []) : [];
-      let transactions = [];
-      const tx = await plaidPost("/transactions/get", {
-        access_token: accessToken,
-        start_date: isoDaysAgo(90),
-        end_date: todayIso(),
-        options: { count: 100, offset: 0 },
-      });
-      if (tx.ok) {
-        transactions = (tx.data.transactions || []).map((t) => ({
-          transaction_id: t.transaction_id,
-          account_id: t.account_id,
-          name: t.name,
-          merchant_name: t.merchant_name ?? null,
-          amount: t.amount,
-          date: t.date,
-          pending: t.pending,
-          category: t.category ?? null,
-          personal_finance_category: t.personal_finance_category ?? null,
-        }));
-      }
+      const summary = await buildItemSummary(accessToken, 90);
       items.set(itemId, {
         access_token: accessToken,
         item_id: itemId,
-        accounts,
+        accounts: summary.accounts,
         institution: body.institution || null,
         updated_at: new Date().toISOString(),
       });
+      // Same fields 0.5.12 reads (item_id, accounts, transactions, institution,
+      // transactions_window_days) + additive recurring / liabilities / data_status.
       sendJson(res, 200, {
         item_id: itemId,
-        accounts,
-        transactions,
         institution: body.institution || null,
-        transactions_window_days: 90,
+        ...summary,
       });
+      return;
+    }
+
+    if (method === "GET" && pathname === "/item/summary") {
+      if (requireConfigured(res)) return;
+      const itemId = url.searchParams.get("item_id") || "";
+      const days = Math.min(180, Math.max(30, Number(url.searchParams.get("days") || 90)));
+      const stored = items.get(itemId);
+      if (!stored) {
+        sendJson(res, 404, { error: "item_not_found" });
+        return;
+      }
+      const summary = await buildItemSummary(stored.access_token, days, { recurringRetries: 3 });
+      stored.accounts = summary.accounts;
+      stored.updated_at = new Date().toISOString();
+      sendJson(res, 200, { item_id: itemId, institution: stored.institution, ...summary });
       return;
     }
 
