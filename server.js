@@ -273,6 +273,78 @@ async function buildItemSummary(accessToken, days = 90, { recurringRetries = 0 }
   };
 }
 
+function linkLiabilitiesOn() {
+  return (process.env.PLAID_LINK_LIABILITIES || "on").trim().toLowerCase() !== "off";
+}
+/** Transfer prototype: sandbox ONLY. Never enabled when PLAID_ENV is not sandbox. */
+function sandboxTransferOn() {
+  return env().plaidEnv === "sandbox" &&
+    (process.env.SILVIA_SANDBOX_TRANSFER || "on").trim().toLowerCase() !== "off";
+}
+function transferSummary(t) {
+  if (!t) return null;
+  return {
+    transfer_id: t.id,
+    type: t.type,
+    amount: t.amount,
+    status: t.status,
+    description: t.description ?? null,
+    account_id: t.account_id,
+    created: t.created ?? null,
+    failure_reason: t.failure_reason
+      ? { ach_return_code: t.failure_reason.ach_return_code ?? null, description: t.failure_reason.description ?? null }
+      : null,
+    recurring_transfer_id: t.recurring_transfer_id ?? null,
+  };
+}
+function plaidErr(r, fallback) {
+  return {
+    error: fallback,
+    plaid_error: r.data?.error_code || null,
+    plaid_error_type: r.data?.error_type || null,
+    message: r.data?.error_message || null,
+  };
+}
+function money(v) {
+  const n = Number(v);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  return n.toFixed(2);
+}
+/** authorization → create. Returns { decision, rationale, transfer } or { error }. */
+async function sandboxTransferOnce(stored, { account_id, type, amount, description }) {
+  const au = await plaidPost("/transfer/authorization/create", {
+    access_token: stored.access_token,
+    account_id,
+    type,
+    network: "ach",
+    amount,
+    ach_class: "ppd",
+    user: { legal_name: "Silvia Sandbox Test" },
+  });
+  if (!au.ok) return { status: au.status, body: plaidErr(au, "plaid_transfer_authorization_failed") };
+  const a = au.data.authorization;
+  if (a.decision !== "approved") {
+    return {
+      status: 200,
+      body: {
+        sandbox: true,
+        decision: a.decision,
+        decision_code: a.decision_rationale?.code ?? null,
+        decision_message: a.decision_rationale?.description ?? null,
+        transfer: null,
+      },
+    };
+  }
+  const tr = await plaidPost("/transfer/create", {
+    access_token: stored.access_token,
+    account_id,
+    authorization_id: a.id,
+    description: String(description || "Silvia test").slice(0, 15),
+  });
+  if (!tr.ok) return { status: tr.status, body: plaidErr(tr, "plaid_transfer_create_failed") };
+  return { status: 200, body: { sandbox: true, decision: "approved", transfer: transferSummary(tr.data.transfer) } };
+}
+
 const MIME = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -342,7 +414,7 @@ const server = http.createServer(async (req, res) => {
       pathname = pathname.slice("/plaid".length) || "/";
     }
 
-    if (method === "OPTIONS" && (PLAID_PATHS.has(pathname) || pathname.startsWith("/item") || pathname.startsWith("/link") || isPlaidHealth)) {
+    if (method === "OPTIONS" && (PLAID_PATHS.has(pathname) || pathname.startsWith("/item") || pathname.startsWith("/link") || pathname.startsWith("/transfer") || isPlaidHealth)) {
       sendJson(res, 200, { ok: true });
       return;
     }
@@ -372,6 +444,9 @@ const server = http.createServer(async (req, res) => {
         country_codes: ["US"],
         language: "en",
         android_package_name: ANDROID_PACKAGE,
+        // Liabilities as an OPTIONAL product: Link still succeeds at banks without it.
+        // PLAID_LINK_LIABILITIES=off drops it (e.g. if a production app isn't approved yet).
+        ...(linkLiabilitiesOn() ? { optional_products: ["liabilities"] } : {}),
       });
       if (!ok) {
         sendJson(res, status >= 400 ? status : 502, {
@@ -512,6 +587,119 @@ const server = http.createServer(async (req, res) => {
       const itemId = body.item_id || "";
       if (itemId) items.delete(itemId);
       sendJson(res, 200, { ok: true, disconnected: itemId || null });
+      return;
+    }
+
+    // ---- Plaid Transfer SANDBOX prototype (never live payments) ----
+    if (pathname.startsWith("/transfer/sandbox")) {
+      if (method === "GET" && pathname === "/transfer/sandbox/status") {
+        sendJson(res, 200, { sandbox: true, enabled: configured() && sandboxTransferOn(), plaid_env: env().plaidEnv });
+        return;
+      }
+      if (requireConfigured(res)) return;
+      if (!sandboxTransferOn()) {
+        sendJson(res, 403, { error: "sandbox_transfer_disabled", plaid_env: env().plaidEnv });
+        return;
+      }
+      const body = method === "POST" ? await readJson(req) : {};
+      const itemId = body.item_id || url.searchParams.get("item_id") || "";
+      const stored = items.get(itemId);
+      const needItem = ["/transfer/sandbox/create", "/transfer/sandbox/move", "/transfer/sandbox/recurring"];
+      if (needItem.includes(pathname) && !stored) {
+        sendJson(res, 404, { error: "item_not_found" });
+        return;
+      }
+      if (method === "POST" && pathname === "/transfer/sandbox/create") {
+        const amount = money(body.amount);
+        const type = body.type === "credit" ? "credit" : "debit";
+        if (!amount || !body.account_id) {
+          sendJson(res, 400, { error: "missing_amount_or_account" });
+          return;
+        }
+        const r = await sandboxTransferOnce(stored, { account_id: body.account_id, type, amount, description: body.description });
+        sendJson(res, r.status, r.body);
+        return;
+      }
+      if (method === "POST" && pathname === "/transfer/sandbox/move") {
+        // Me-to-me: debit FROM account, then credit TO account (two sandbox transfers).
+        const amount = money(body.amount);
+        if (!amount || !body.from_account_id || !body.to_account_id) {
+          sendJson(res, 400, { error: "missing_amount_or_accounts" });
+          return;
+        }
+        const out = await sandboxTransferOnce(stored, { account_id: body.from_account_id, type: "debit", amount, description: "To savings" });
+        if (out.status !== 200 || out.body.decision !== "approved") {
+          sendJson(res, out.status, { sandbox: true, debit: out.body, credit: null });
+          return;
+        }
+        const inn = await sandboxTransferOnce(stored, { account_id: body.to_account_id, type: "credit", amount, description: "From checking" });
+        sendJson(res, inn.status, { sandbox: true, debit: out.body, credit: inn.body });
+        return;
+      }
+      if (method === "POST" && pathname === "/transfer/sandbox/recurring") {
+        const amount = money(body.amount);
+        const day = Math.min(28, Math.max(1, Number(body.day_of_month || 1)));
+        if (!amount || !body.account_id) {
+          sendJson(res, 400, { error: "missing_amount_or_account" });
+          return;
+        }
+        const start = new Date();
+        start.setUTCDate(start.getUTCDate() + 2);
+        const rc = await plaidPost("/transfer/recurring/create", {
+          access_token: stored.access_token,
+          account_id: body.account_id,
+          type: "debit",
+          network: "ach",
+          amount,
+          ach_class: "ppd",
+          user: { legal_name: "Silvia Sandbox Test" },
+          description: String(body.description || "Autopay test").slice(0, 15),
+          idempotency_key: randomUUID(),
+          schedule: { interval_unit: "month", interval_count: 1, interval_execution_day: day, start_date: start.toISOString().slice(0, 10) },
+        });
+        if (!rc.ok) {
+          sendJson(res, rc.status, plaidErr(rc, "plaid_recurring_transfer_failed"));
+          return;
+        }
+        const r = rc.data.recurring_transfer;
+        sendJson(res, 200, {
+          sandbox: true,
+          decision: rc.data.decision ?? null,
+          recurring_transfer_id: r?.recurring_transfer_id ?? null,
+          status: r?.status ?? null,
+          next_origination_date: r?.next_origination_date ?? null,
+          amount: r?.amount ?? amount,
+        });
+        return;
+      }
+      if (method === "POST" && pathname === "/transfer/sandbox/recurring/cancel") {
+        const c = await plaidPost("/transfer/recurring/cancel", { recurring_transfer_id: body.recurring_transfer_id });
+        sendJson(res, c.ok ? 200 : c.status, c.ok ? { sandbox: true, cancelled: true } : plaidErr(c, "plaid_recurring_cancel_failed"));
+        return;
+      }
+      if (method === "GET" && pathname === "/transfer/sandbox/get") {
+        const g = await plaidPost("/transfer/get", { transfer_id: url.searchParams.get("transfer_id") || "" });
+        sendJson(res, g.ok ? 200 : g.status, g.ok ? { sandbox: true, transfer: transferSummary(g.data.transfer) } : plaidErr(g, "plaid_transfer_get_failed"));
+        return;
+      }
+      if (method === "POST" && pathname === "/transfer/sandbox/simulate") {
+        const ev = ["posted", "settled", "failed", "returned", "funds_available"].includes(body.event_type) ? body.event_type : null;
+        if (!ev || !body.transfer_id) {
+          sendJson(res, 400, { error: "missing_transfer_or_event" });
+          return;
+        }
+        const req2 = { transfer_id: body.transfer_id, event_type: ev };
+        if (ev === "returned" || ev === "failed") req2.failure_reason = { ach_return_code: body.ach_return_code || "R01" };
+        const sim = await plaidPost("/sandbox/transfer/simulate", req2);
+        if (!sim.ok) {
+          sendJson(res, sim.status, plaidErr(sim, "plaid_transfer_simulate_failed"));
+          return;
+        }
+        const g = await plaidPost("/transfer/get", { transfer_id: body.transfer_id });
+        sendJson(res, 200, { sandbox: true, simulated: ev, transfer: g.ok ? transferSummary(g.data.transfer) : null });
+        return;
+      }
+      sendJson(res, 404, { error: "not_found" });
       return;
     }
 
